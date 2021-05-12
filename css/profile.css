@@ -1,0 +1,22 @@
+article{
+    padding: 60px;
+}
+.contact{
+    display: flex;
+
+}
+.contact-profile-image{
+    width: 40%;
+    height: auto;
+}
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+    justify-content: space-around
+        
+}
+#tema-interes{
+    margin-top: 50px;
+}
