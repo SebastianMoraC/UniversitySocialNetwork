@@ -1,0 +1,20 @@
+.pedidos{
+    margin-top: 10px;
+    flex: auto;
+    flex-wrap: wrap;
+    
+}
+.pedidos-pedido{
+    margin: 30px;
+    border: solid 3px rgb(4, 4, 131);
+    border-radius: 8px;
+    padding: 20px
+    
+}
+.pedido_data{
+    font-size: 20px;
+    display: inline;
+}
+.pedido_data__label{
+    display: inline;
+}
