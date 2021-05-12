@@ -1,0 +1,32 @@
+.h1_tittle{
+    margin: 50px;
+    color: /*white*/ black;
+}
+.textbox{
+    margin: 20px;
+    padding: 5px;
+    padding-left: 30px;
+    border: solid 1px;
+    border-radius: 4px;
+    outline-color: blue;
+
+}
+.divContainer{
+    margin: 30px;
+    border: solid 3px black;
+    border-radius: 8px;
+    /*background-color: #3252B6;*/
+    padding: 20px
+}
+.button{
+    margin: 10px;
+    height: 40px;
+    background-color: /*#1487D9*/ white ;
+    color: black;
+    border: solid 1px ;
+    border-radius: 10px;
+}
+.button:hover{
+    background: white;
+    transition: .6s;
+}
