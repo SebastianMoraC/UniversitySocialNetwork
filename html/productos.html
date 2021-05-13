@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/productos.css">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <title>Productos</title>
+</head>
+<body>  
+    <div class="mx-auto col-12">
+        <div class="container divConttainer">
+            <h1 class="h_tittle">Productos</h1>
+            <div class="row divcreacion col-10 mx-auto">
+                <h3 class="col-8 h_crear" >Creacion de producto</h3>
+                <input type="button" class="col-2 mx-auto button" value="Crear" data-toggle="modal" data-target="#modalCrear">                   <!--Boton abre modal-->
+            </div>
+                <div class="col-12">
+                  <!--Modal inicio-->
+                    <div class="modal col-6 mx-auto"  id="modalCrear" tabindex="-1" role="dialog" aria-labelledby="Crear Producto" aria-hidden="true">
+                      <br><br><div class="modal-lg-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                              <h2>Crear Producto</h2>
+                              <button class="close" data-dismiss="modal" area-label="Cerrar"><span aria-hidden="true">&times;</span></button> <!--Simbolo "X" cierra modal-->
+                          </div>
+                          <div class="modal-body centerInput">
+                            <form>
+                              <label class="col-4"> Foto del Producto</label><input class="col-7 mx-auto " type="file">
+                              <label class="col-4"> Nombre del vendedor</label><input  type="text" class="col-7 mx-auto inputText" value="">
+                              <label class="col-4"> Precio del producto</label><input  type="text" class="col-7 mx-auto inputText"  value="">
+                              <label class="col-4"> Descripcion del producto</label><textarea  class="col-7 inputText" rows="2"></textarea>
+                              <label class="col-4"> Ubicacion</label><input type="text" class="col-7 mx-auto inputText"  value="">
+                            </form>
+   
+                          </div>
+                          <div class="modal-footer text-center">
+                            <button type="button" class="col-2 button" data-dismiss="modal">Regresar</button> <!--Cierra Modal-->
+                            <button type="button" class="col-4 button">Crear</button>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  <!--Modal fin-->
+                  </div>
+            <div id="list_productos" class="text-center mx-auto col-10 divContainer">
+                <div class="row divProductos">
+                  <div class="col-lg-7 col-sm-12 text-left">
+                    <b>Nombre vendedor: </b><label>Julian Ospina</label><br>
+                    <b>Precio producto: </b><label>$1.000 cop</label><br>
+                    <b>Descipcion: </b><label>Empanada con carne de unicornio</label><br>
+                    <b>Ubicacion: </b><label>UTP</label>
+                  </div>
+                  <div class="col-lg-4 col-sm-12">
+                      <img src="../Images/empanada.jpg" width="250px">
+                  </div>
+                </div>
+
+
+                <div class="row divProductos">
+                  <div class="col-lg-7 col-sm-12 text-left">
+                    <b>Nombre vendedor: </b><label>Julian Ospina</label><br>
+                    <b>Precio producto: </b><label>$2.000 cop</label><br>
+                    <b>Descipcion: </b><label>Empanada 2 con carne de unicornio</label><br>
+                    <b>Ubicacion: </b><label>UTP</label>
+                  </div>
+                  <div class="col-lg-4 col-sm-12">
+                      <img src="../Images/empanada.jpg" width="250px">
+                  </div>
+                </div>
+        </div>
+    </div>
+    
+    
+</body>
+</html>

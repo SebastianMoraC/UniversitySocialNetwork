@@ -1,0 +1,49 @@
+.button{
+    margin: 10px;
+    height: 40px;
+    background-color: /*#1487D9*/ white ;
+    color: black;
+    border: solid 1px ;
+    border-radius: 10px;
+}
+
+.button:hover{
+    background: gray;
+    transition: .6s;
+}
+
+.divProductos{
+    margin: 20px;
+    border: solid 2px black;
+    border-radius: 40px;
+    background-color: white;
+    padding: 20px
+}
+
+.divcreacion{
+    background-color: white;
+    margin: 10px;
+    border: solid 2px black;
+    border-radius: 15px;
+    /*background-color: #3252B6;*/ 
+}
+
+.h_crear{
+    margin: auto;
+}
+
+.h_tittle{
+    margin: 20px;
+}
+
+.inputText{
+    border: solid 1px black;
+    border-radius: 5px;
+}
+
+.divConttainer{
+    
+    margin: 10px;
+    border: solid 1px black;
+    border-radius: 15px;
+}
