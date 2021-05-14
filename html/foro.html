@@ -23,7 +23,7 @@
                 </div>
                     <div class="col-12">
                       <!--Modal inicio-->
-                        <div class="modal col-6 mx-auto"  id="modalCrear" tabindex="-1" role="dialog" aria-labelledby="Crear Producto" aria-hidden="true">
+                        <div class="modal col-6 mx-auto"  id="modalCrear" tabindex="-1" role="dialog" aria-labelledby="Crear publicacion" aria-hidden="true">
                           <br><br><div class="modal-lg-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header">
@@ -33,11 +33,13 @@
                               <div class="modal-body centerInput">
                                 <form>
                                   
-                                <label class="col-4"> Autor</label><input  type="text" class="col-7 mx-auto inputText" value="">
-                                <label class="col-4">Texto</label><textarea  class="col-7 inputText" rows="5"></textarea>
+                                <label class="col-4"> Autor*</label><input  type="text" class="col-7 mx-auto inputText" value="">
+                                <label class="col-4"> Enlace*</label><input  type="text" class="col-7 mx-auto inputText" value="">
+
+                                <label class="col-4">Texto*</label><textarea  class="col-7 inputText" rows="5"></textarea>
                                 
                                 <select class="form-control form_category">
-                                    <option selected class="form_control_selected">Categoria</option>
+                                    <option selected class="form_control_selected">Categoria*</option>
                                     <option>Tema 1</option>
                                     <option>Tema 2</option>
                                     <option>Tema 3</option>
@@ -50,7 +52,7 @@
        
                               </div>
                               <div class="modal-footer text-center">
-                                <button type="button" class="col-2 button" data-dismiss="modal">Regresar</button> <!--Cierra Modal-->
+                                <button type="button" class="col-4 button" data-dismiss="modal">Regresar</button> <!--Cierra Modal-->
                                 <button type="button" class="col-4 button">Crear</button>
     
                               </div>
@@ -68,6 +70,7 @@
                     <div class="row">
                         <h2 class="publication_name col-8">La ciencia de los planetas</h1>
                         <b class="col-4 publication_date">22/05/2021</b>
+                        <a class="col-2 publication_date" href="">Enlace asociado</a>
                     </div>
                     <div class="row">
                     <b class="publication_category column">Categoria: Ciencia</b>
