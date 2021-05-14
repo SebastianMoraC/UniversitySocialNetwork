@@ -4,31 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../css/bootstrap.css" rel="stylesheet"> 
+    <link href="../css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/registro.css">
     <title>Página de Registro</title>
 </head>
 <body>
-        
+
     <div class="mx-auto col-8">
         <div class="container firts divContainer ">
             <div class="row justify-content-center">
                     <h1 class="col-9 text-left h1_tittle">REGISTRAR</h1>
             </div>
-            <form action="">
+            <form action="" name="form">
                 <div class="row justify-content-center">
-                    <input class="col-8 textbox" type="text" placeholder="CORREO">
-                    <input class="col-8 textbox" type="text" placeholder="CONTRASEÑA">
-                    <input class="col-8 textbox" type="text" placeholder="NOMBRE">
-                    <input class="col-8 textbox" type="text" placeholder="APELLIDOS">
-                    <input class="col-8 textbox" type="text" placeholder="UNIVERSIDAD">
+                    <input class="col-8 textbox" type="text" placeholder="CORREO" name="correo" >
+                    <input class="col-8 textbox" type="text" placeholder="CONTRASEÑA" name="contraseña" >
+                    <input class="col-8 textbox" type="text" placeholder="NOMBRE" name="nombre" >
+                    <input class="col-8 textbox" type="text" placeholder="APELLIDOS" name="apellido" >
+                    <input class="col-8 textbox" type="text" placeholder="UNIVERSIDAD" name="universidad" >
                 </div>
                 <div class="row justify-content-end">
                     <input class="col-3 button" type="button" value="Volver" onclick="redirect();">
-                    <input class="col-3 button" type="button" value="Registrar">
+                    <input class="col-3 button" type="button" value="Registrar" onclick="registrarusuario();">
                 </div>
             </form>
-            
+
     </div>
     <script type="text/javascript" src="../js/registro.js"></script>
 </body>
