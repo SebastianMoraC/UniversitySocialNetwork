@@ -6,40 +6,111 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Foro</title>
         <!--CSS-->
-        <link href="../css/pedidos.css" rel="stylesheet">
-        <link href="../css/bootstrap.css" rel="stylesheet"> 
+        <link href="../css/foro.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        
+        
 
     </head>
 
     <body>
-        
-        <div class="container publications">
-            <h1>Foro</h1>
-            <div class="publication">
-                <h1 class="text-left publication_name">Nombre de la Publicación</h1>
-                <label for="date" class="publication_date">15/02/2021</label>
-                <label for="dataPedido" class="pedido_data pedido_data__label">Vendedor:</label>
-                <p class="pedido_data">Julian Alfonso</p>
-                <br>
-                <label for="dataPedido" class="pedido_data pedido_data__label">Precio:</label>
-                <p class="pedido_data">5.000</p>
-                <br>
-                <label for="dataPedido" class="pedido_data pedido_data__label">Categoria:</label>
-                <p class="pedido_data">Comida</p>
-                <br>
-                <label for="dataPedido" class="pedido_data pedido_data__label">Fecha:</label>
-                <p class="pedido_data">12/02/2021</p>
-                <br>
-                <label for="dataPedido" class="pedido_data pedido_data__label">Descripción:</label>
-                <p class="pedido_data">Ejemplo de Descripción</p>
+        <div class="mx-auto col-12">
+            <div class="container divConttainer">
+                <h1 class="h_tittle">Foro</h1>
+                <div class="row divcreacion col-10 mx-auto">
+                    <h3 class="col-8 h_crear" >Realiza una publicación</h3>
+                    <input type="button" class="col-2 mx-auto button" value="Crear" data-toggle="modal" data-target="#modalCrear">                   <!--Boton abre modal-->
+                </div>
+                    <div class="col-12">
+                      <!--Modal inicio-->
+                        <div class="modal col-6 mx-auto"  id="modalCrear" tabindex="-1" role="dialog" aria-labelledby="Crear Producto" aria-hidden="true">
+                          <br><br><div class="modal-lg-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                  <h2>Publicar</h2>
+                                  <button class="close" data-dismiss="modal" area-label="Cerrar"><span aria-hidden="true">&times;</span></button> <!--Simbolo "X" cierra modal-->
+                              </div>
+                              <div class="modal-body centerInput">
+                                <form>
+                                  
+                                <label class="col-4"> Autor</label><input  type="text" class="col-7 mx-auto inputText" value="">
+                                <label class="col-4">Texto</label><textarea  class="col-7 inputText" rows="5"></textarea>
+                                
+                                <select class="form-control form_category">
+                                    <option selected class="form_control_selected">Categoria</option>
+                                    <option>Tema 1</option>
+                                    <option>Tema 2</option>
+                                    <option>Tema 3</option>
+                                    <option>Tema 4</option>
+                                    <option>Tema 5</option>
+                                </select>
+                                
+                                <label class="col-4">Fotografía para el post</label><input class="col-7 mx-auto " type="file">
+                                </form>
+       
+                              </div>
+                              <div class="modal-footer text-center">
+                                <button type="button" class="col-2 button" data-dismiss="modal">Regresar</button> <!--Cierra Modal-->
+                                <button type="button" class="col-4 button">Crear</button>
+    
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      <!--Modal fin-->
+                      </div>
                 
+        </div>
+        <div class="container publications">
+            
+            <div class="publication row">
+                <div class="container col-12">
+                    <div class="row">
+                        <h2 class="publication_name col-8">La ciencia de los planetas</h1>
+                        <b class="col-4 publication_date">22/05/2021</b>
+                    </div>
+                    <div class="row">
+                    <b class="publication_category column">Categoria: Ciencia</b>
+                    </div>
+                    
+                    <p class="publication_text row">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque voluptatem quasi, nam beatae quaerat vel itaque exercitationem architecto dolor culpa quisquam consectetur natus fugit voluptatibus ullam, atque repudiandae corporis doloribus!Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, quo id. Consectetur beatae commodi quos illum incidunt omnis tempora molestiae eos dicta delectus aliquid eligendi, dignissimos natus nulla, reprehenderit nihil!Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque voluptatem quasi, nam beatae quaerat vel itaque exercitationem architecto dolor culpa quisquam consectetur natus fugit voluptatibus ullam, atque repudiandae corporis doloribus!Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, quo id. Consectetur beatae commodi quos illum incidunt omnis tempora molestiae eos dicta delectus aliquid eligendi, dignissimos natus nulla, reprehenderit nihil!Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque voluptatem quasi, nam beatae quaerat vel itaque exercitationem architecto dolor culpa quisquam consectetur natus fugit voluptatibus ullam, atque repudiandae corporis doloribus!Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, quo id. Consectetur beatae commodi quos illum incidunt omnis tempora molestiae eos dicta delectus aliquid eligendi, dignissimos natus nulla, reprehenderit nihil!</p>
+                    <div class="publication_image row">
+                        <img src="../Images/jupiter.png" class="rounded mx-auto d-block publication_image_item ">
+                    </div>
+                    
+                    <b class="publication_author row">Autor: Isabel Aguirre Martinez</b>
+                    
+                </div>
+                <div class="publication_ratio col-12">
+                    <i class="far fa-star fa-2x publication__star" id="starOne" onclick="ratio(this.id);"></i>
+                    <i class="far fa-star fa-2x publication__star" id="starTwo" onclick="ratio(this.id);"></i>
+                    <i class="far fa-star fa-2x publication__star" id="starThree" onclick="ratio(this.id);"></i>
+                    <i class="far fa-star fa-2x publication__star" id="starFour" onclick="ratio(this.id);"></i>
+                    <i class="far fa-star fa-2x publication__star" id="starFive" onclick="ratio(this.id);"></i>
+                </div>
+                <div class="publication_comments container col-12">
+                    <div class="publication_comments_create row">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Agregue un comentario" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button">Comentar</button>
+                            </div>
+                        </div>
+                          
+                    </div>
+                    <div class="publication_comments__text row">
+                        
+                    </div>
+                </div>
             </div>
     
         </div>
         <!--JS-->
-        <script src="../js/jquery.min.js"></script>
-
-        <script src="../js/bootstrap.js"></script>
+        
+        <script src="https://kit.fontawesome.com/4a8e5f3b5a.js" crossorigin="anonymous"></script>
+        <script src="../js/foro.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
     </body> 
 
 </html>

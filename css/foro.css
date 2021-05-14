@@ -1,6 +1,100 @@
-.publications{
-
+h1{
+    margin-top: 50px;
+    margin-left: 60px;
 }
 .publication{
+    margin: 30px;
+    border: solid 3px black;
+    border-radius: 8px;
+    padding: 20px;
+    
+}
+.publication_date{
+    margin-top: 15px;
+    font-size: 20px;
+    
+}
+.publication_image{
+    margin: auto;
+}
+.publication_image_item{
+    max-width: 500px;
+    height: auto;
+}
+.publication_author{
+    font-size: 20px;
+    padding-left: 25px;
+}
+.publication_text{
+    padding: 20px;
+}
+.publication_category{
+    padding: 20px;
+}
+.publication_comments{
+    margin-top: 20px;
+}
+.publication_ratio{
+    margin-top: 10px;
+    margin-left: 9px;
+}
+i.fas{
+    color: yellow;
+}
+.fa-star:hover{
+    color: yellow;
 
-} 
+}
+.button{
+    margin: 10px;
+    height: 40px;
+    background-color: /*#1487D9*/ white ;
+    color: black;
+    border: solid 1px ;
+    border-radius: 10px;
+}
+
+.button:hover{
+    background: gray;
+    transition: .6s;
+}
+
+.divProductos{
+    margin: 20px;
+    border: solid 2px black;
+    border-radius: 40px;
+    background-color: white;
+    padding: 20px
+}
+
+.divcreacion{
+    background-color: white;
+    margin: 10px;
+    border: solid 2px black;
+    border-radius: 15px;
+    /*background-color: #3252B6;*/ 
+}
+
+.h_crear{
+    margin: auto;
+}
+
+.h_tittle{
+    margin: 20px;
+}
+
+.inputText{
+    border: solid 1px black;
+    border-radius: 5px;
+}
+.form_category{
+    margin-top: 20px;
+    margin-bottom:20px;
+}
+.form_category:focus{
+    color: black;
+}
+
+
+
+
