@@ -85,7 +85,7 @@
 
                 </div>
                 <div class="publication_ratio col-12">
-                    <i class="far fa-star fa-2x publication__star" id="starOne" onclick="ratio(this.id);"></i>
+                    <i class="far fa-star fa-2x publication__star" id="starOne" onclick="ratio(this.id);" ></i>
                     <i class="far fa-star fa-2x publication__star" id="starTwo" onclick="ratio(this.id);"></i>
                     <i class="far fa-star fa-2x publication__star" id="starThree" onclick="ratio(this.id);"></i>
                     <i class="far fa-star fa-2x publication__star" id="starFour" onclick="ratio(this.id);"></i>
@@ -94,9 +94,9 @@
                 <div class="publication_comments container col-12">
                     <div class="publication_comments_create row">
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Agregue un comentario" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <input type="text" class="form-control" placeholder="Agregue un comentario" aria-label="Recipient's username" aria-describedby="basic-addon2" id='publicacion'>
                             <div class="input-group-append">
-                                <button class="btn btn-outline-secondary" type="button">Comentar</button>
+                                <button class="btn btn-outline-secondary" type="button" onclick="comentario();">Comentar</button>
                             </div>
                         </div>
 

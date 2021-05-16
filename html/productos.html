@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/productos.css">
-    
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    
+
     <title>Productos</title>
 </head>
-<body>  
+<body>
     <div class="mx-auto col-12">
         <div class="container divConttainer">
             <h1 class="h_tittle">Productos</h1>
@@ -30,18 +30,18 @@
                               <button class="close" data-dismiss="modal" area-label="Cerrar"><span aria-hidden="true">&times;</span></button> <!--Simbolo "X" cierra modal-->
                           </div>
                           <div class="modal-body centerInput">
-                            <form>
+                            <form name="formproducto">
                               <label class="col-lg-4 col-sm-10"> Foto del Producto</label><input class="col-lg-7 col-sm-12 mx-auto " type="file">
-                              <label class="col-lg-4 col-sm-10"> Nombre del vendedor</label><input  type="text" class="col-lg-7 col-sm-12 mx-auto inputText" value="">
-                              <label class="col-lg-4 col-sm-10"> Precio del producto</label><input  type="text" class="col-lg-7 col-sm-12 mx-auto inputText"  value="">
-                              <label class="col-lg-4 col-sm-10"> Descripcion del producto</label><textarea  class="col-lg-7 col-sm-12 inputText" rows="2"></textarea>
-                              <label class="col-lg-4 col-sm-10"> Ubicacion</label><input type="text" class="col-lg-7 col-sm-12 mx-auto inputText"  value="">
+                              <label class="col-lg-4 col-sm-10"> Nombre del vendedor</label><input  type="text" class="col-lg-7 col-sm-12 mx-auto inputText" value="" name="vendedor">
+                              <label class="col-lg-4 col-sm-10"> Precio del producto</label><input  type="text" class="col-lg-7 col-sm-12 mx-auto inputText"  value="" name="precio">
+                              <label class="col-lg-4 col-sm-10"> Descripcion del producto</label><textarea  class="col-lg-7 col-sm-12 inputText" rows="2" name="descripcion"></textarea >
+                              <label class="col-lg-4 col-sm-10"> Ubicacion</label><input type="text" class="col-lg-7 col-sm-12 mx-auto inputText"  value="" name="ubicacion">
                             </form>
-   
+
                           </div>
                           <div class="modal-footer text-center">
-                            <button type="button" class="col-4 button" data-dismiss="modal">Regresar</button> <!--Cierra Modal-->
-                            <button type="button" class="col-4 button">Crear</button>
+                            <button type="button" class="col-4 button" data-dismiss="modal" >Regresar</button> <!--Cierra Modal-->
+                            <button type="button" class="col-4 button" onclick="crear_producto();">Crear</button>
 
                           </div>
                         </div>
@@ -76,7 +76,7 @@
                 </div>
         </div>
     </div>
-    
-    
+
+<script type="text/javascript" src="../js/producto.js"></script>
 </body>
 </html>

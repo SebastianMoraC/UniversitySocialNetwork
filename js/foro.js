@@ -19,7 +19,7 @@ function ratio(starPush){
             starThree.classList.replace("fas","far");
             starFour.classList.replace("fas","far");
             starFive.classList.replace("fas","far");
-            
+
             break;
         case "starThree":
             starOne.classList.replace("far","fas");
@@ -28,7 +28,7 @@ function ratio(starPush){
             starFour.classList.replace("fas","far");
             starFive.classList.replace("fas","far");
             break;
-            
+
         case "starFour":
             starOne.classList.replace("far","fas");
             starTwo.classList.replace("far","fas");
@@ -44,9 +44,8 @@ function ratio(starPush){
             starFive.classList.replace("far","fas");
             break;
         default:
-            
+
             break;
     }
-    
+
 }
-  
