@@ -46,8 +46,8 @@
                                     <option>Tema 4</option>
                                     <option>Tema 5</option>
                                 </select>
-
-                                <label class="col-4">Fotografía para el post</label><input class="col-7 mx-auto " type="file" id="file">
+                                <label class="col-8">Fotografía para el post</label><input class="col-7 mx-auto " type="file" id="imagen" onchange="Img()";>
+                                <img class="col-8" id="imagencargada"  src="../Images/image_not_available.png" />
                                 </form>
 
                               </div>
@@ -105,9 +105,6 @@
 
                     </div>
                 </div>
-            </div>
-            <div id="main">
-              <canvas id="canvas" width="800" height="600"></canvas>
             </div>
 
         </div>

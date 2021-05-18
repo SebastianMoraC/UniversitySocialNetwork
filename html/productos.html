@@ -31,7 +31,8 @@
                           </div>
                           <div class="modal-body centerInput">
                             <form name="formproducto">
-                              <label class="col-lg-4 col-sm-10"> Foto del Producto</label><input class="col-lg-7 col-sm-12 mx-auto " type="file">
+                              <label class="col-lg-4 col-sm-10"> Foto del Producto</label><input class="col-lg-7 col-sm-12 mx-auto " type="file"  id="imagen" onchange="Img()";>
+                              <img class="col-8" id="imagencargada"  src="../Images/image_not_available.png" />
                               <label class="col-lg-4 col-sm-10"> Nombre del vendedor</label><input  type="text" class="col-lg-7 col-sm-12 mx-auto inputText" value="" name="vendedor">
                               <label class="col-lg-4 col-sm-10"> Precio del producto</label><input  type="text" class="col-lg-7 col-sm-12 mx-auto inputText"  value="" name="precio">
                               <label class="col-lg-4 col-sm-10"> Descripcion del producto</label><textarea  class="col-lg-7 col-sm-12 inputText" rows="2" name="descripcion"></textarea >

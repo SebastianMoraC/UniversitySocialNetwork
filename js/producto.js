@@ -1,3 +1,13 @@
+function Img(){
+  var reader = new FileReader();
+  reader.readAsDataURL(document.getElementById("imagen").files[0]);
+  reader.onload=function(e){
+    document.getElementById('imagencargada').src = e.target.result;
+    console.log(document.getElementById('imagencargada').src)
+  }
+}
+
+
 function crear_producto(){
   var vendedor = document.formproducto.vendedor;
   var precio = document.formproducto.precio;
