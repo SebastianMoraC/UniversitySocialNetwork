@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/registro.css">
+    <title>Estadisticas</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.1/chart.min.js" integrity="sha512-tOcHADT+YGCQqH7YO99uJdko6L8Qk5oudLN6sCeI4BQnpENq6riR6x9Im+SGzhXpgooKBRkPsget4EOoH5jNCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+</head>
+
+<body>
+    <!--NAVBAR-->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">University Social Network</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="foro.html">Foro <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="productos.html">Productos</a>
+                </li>
+                <li class="nav-item dropdown active ">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Perfil
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="perfil.html">Perfil</a>
+                        <a class="dropdown-item" href="pedidos.html">Mis Pedidos</a>
+                        <a class="dropdown-item" href="estadisticas.html">Estadisticas</a>
+                        <hr class="dropdown-divider">
+                        <a class="dropdown-item" href="loging.html">Cerrar Sesión</a>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <!--END NAVBAR-->
+    <div class="container">
+        <canvas id="myChart" width="400" height="200"></canvas>
+    </div>
+
+    <!--JS-->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/estadisticas.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    
+</body>
+
+</html>
