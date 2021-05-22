@@ -57,9 +57,9 @@ function registrarusuario(){
             alert("Ya existe un usuario  registrado con este Correo");
           }
           else{
-            //redireccion a la pagina principal
+            window.location.replace("loging.html");
           }
-          
+
         });
 
 

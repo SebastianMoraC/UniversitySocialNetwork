@@ -16,6 +16,7 @@ function publicar(){
   var lista = document.getElementById("opciones");
   var indiceSeleccionado = lista.selectedIndex;
   var opcionSeleccionada = lista.options[indiceSeleccionado];
+  var imag=document.getElementById("imagen").files[0];
   alert('nombre del autor: '+autor.value+
   '\n nombre de la publicacion: '+nombre.value+
   '\n enlace: '+enlace.value+
@@ -28,11 +29,12 @@ function publicar(){
     "enlace":enlace.value,
     "texto":texto.value,
     "opcion":opcionSeleccionada.value,
+    "imagen":imag
   }
 
   $.ajax({
     data: parametros,
-    url:'publicacion.php',
+    url:'../BACK-PHP/publicacion.php',
     method:'POST',
     responseType:'json',
   }).then(function(data){
@@ -54,7 +56,7 @@ function comentario(){
 
   $.ajax({
     data: parametros,
-    url:'publicacion.php',
+    url:'../BACK-PHP/publicacion.php',
     method:'POST',
     responseType:'json',
   }).then(function(data){
