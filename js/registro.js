@@ -17,7 +17,7 @@ function registrarusuario(){
       temas_interes = temas_interes + temas[i].value + ",";
     }
   }
-  re=/^([\da-z_\.-]+)@utp.edu.co/
+  re=/^([\da-z_\.-]+)@([\da-z_]+).edu.co/
   if (correo.value=='' || contraseña.value=='' || valcontraseña.value=='' || nombre.value=='' || apellido.value=='' || universidad.value==''){
     alert("falto un campo")
   }else{
