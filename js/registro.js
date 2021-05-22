@@ -1,3 +1,6 @@
+rellenarcampos();
+
+
 function redirect(){
     window.location.replace("loging.html");
   }
@@ -45,11 +48,18 @@ function registrarusuario(){
 
         $.ajax({
           data: parametros,
-          url:'conexion.php',
+          url:'../BACK-PHP/consumirAPI_registro.php',
           method:'POST',
           responseType:'json',
         }).then(function(data){
           var datos=JSON.parse(data);
+          if(datos.id_usuario=="YaExiste"){
+            alert("Ya existe un usuario  registrado con este Correo");
+          }
+          else{
+            //redireccion a la pagina principal
+          }
+          
         });
 
 
@@ -63,11 +73,15 @@ function registrarusuario(){
 
 function rellenarcampos(){
   $.ajax({
-    url:'conexion.php?publicacion',
+    url:'../BACK-PHP/consumirAPI_llenasTemas.php',
     method:'GET',
     responseType:'json',
   }).then(function(data){
-    var contenedor=document.getElementById("tipos_de_temas");
-    contenedor.innerHTML= datos +contenedor.innerHTML;
+    var datosTemas=JSON.parse(data);
+    var divTemas=document.getElementById("tipos_de_temas");
+
+    for(var i=0;i<Object.keys(datosTemas).length;i++){
+      divTemas.innerHTML=divTemas.innerHTML+`<input type="checkbox" value="${datosTemas[i].id_tema}" name="tema">${datosTemas[i].nombre_tema}`
+    }
   });
 }
