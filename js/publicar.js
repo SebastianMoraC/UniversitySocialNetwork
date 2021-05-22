@@ -1,3 +1,10 @@
+var usuario='';
+
+function reconocerusuario(usuario){
+  usurio=usuario; //guarda el usuario q ha ingresado
+}
+
+
 function Img(){
   var reader = new FileReader();
   reader.readAsDataURL(document.getElementById("imagen").files[0]);

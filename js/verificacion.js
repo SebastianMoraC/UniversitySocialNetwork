@@ -8,14 +8,22 @@ function verradiovalue(){
   }
 
   $.ajax({
-    data: parametros,
     url:'../BACK-PHP/publicacion.php',
-    method:'POST',
+    method:'GET',
     responseType:'json',
   }).then(function(data){
-    var datos=JSON.parse(data);
+    var usuario=JSON.parse(data);//devuelve los usuario y las contraseña
+    if (usuario==gmail.value){//seria mirar todos los usuarios y comparar para ver cual coincide
+      guardarusuario(gmail,contraseña) //esto guarda el usuario con la contraseña con la q ingreso en un java por si lo necesita
+      reconocerusuario(gmail) //esto mete usuario en una variable en foro para hacer la publicacion
+      window.location.replace("foro.html");
+    }else{//si no coincide mostrar incorrecto
+      alert("incorrecto");
+    }
   });
 }
+
+
 function redirect(){
   window.location.replace("registro.html");
 }
