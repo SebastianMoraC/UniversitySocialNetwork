@@ -17,7 +17,11 @@ function registrarusuario(){
   var i;
   for (i = 0; i < temas.length; i++) {
     if (temas[i].checked) {
-      temas_interes = temas_interes + temas[i].value + ",";
+      if(temas_interes!=""){
+        temas_interes=temas_interes+",";
+      }
+        temas_interes = temas_interes + temas[i].value;
+      
     }
   }
   re=/^([\da-z_\.-]+)@([\da-z_]+).edu.co/

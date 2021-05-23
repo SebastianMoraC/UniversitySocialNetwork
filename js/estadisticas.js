@@ -10,6 +10,15 @@ $.ajax({
         nombreTemas.push(datosTemas[i].nombre_tema)
         cantidadDatos.push(parseInt(datosTemas[i].id_tema)); //Aquí debe cambiarse el id_tema por la cantidad de datos que le gusta un tema en concreto
       }
+      $.ajax({
+        url: '../BACK-PHP/consumirAPI_usuario.php?temas_interes',
+        method: 'GET',
+        responseType: 'json',
+    }).then(function (data) {
+        console.log(JSON.parse(data)[0].id_tema_interes_usuario);
+        console.log(JSON.parse(data)[1].id_tema_interes_usuario);
+    });
+
     var ctx = document.getElementById('myChart').getContext('2d');
 
     var myChart = new Chart(ctx, {

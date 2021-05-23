@@ -62,7 +62,7 @@ include '../BACK-PHP/ApiRest.php';
             exit();
         }
     }
-    elseif($_SERVER['REQUEST_METHOD']=='GET'){
+    elseif($_SERVER['REQUEST_METHOD']=='GET'){""
             if(isset($_GET['post'])){
                 header("HTTP/1.1 200 OK");
                 $query="SELECT * FROM  post";
