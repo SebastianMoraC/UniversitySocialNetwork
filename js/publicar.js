@@ -1,3 +1,5 @@
+const { param } = require("jquery");
+
 function Img(){
   var reader = new FileReader();
   reader.readAsDataURL(document.getElementById("imagen").files[0]);
@@ -29,18 +31,18 @@ function publicar(){
     "texto":texto.value,
     "opcion":opcionSeleccionada.value,
   }
-
+  
   $.ajax({
     data: parametros,
-    url:'publicacion.php',
+    url:'../BACK-PHP/consumirAPI_Foro.php',
     method:'POST',
     responseType:'json',
   }).then(function(data){
+    console.log(data);
     var datos=JSON.parse(data);
   });
 
 }
-
 
 
 function comentario(){
@@ -49,12 +51,12 @@ function comentario(){
 
 
   var parametros={
-    "publicacion":publicacion.value
+    "publicacion_comentario":publicacion.value
   }
 
   $.ajax({
     data: parametros,
-    url:'publicacion.php',
+    url:'../BACK-PHP/consumirAPI_Foro..php',
     method:'POST',
     responseType:'json',
   }).then(function(data){
@@ -62,3 +64,4 @@ function comentario(){
   });
 
 }
+

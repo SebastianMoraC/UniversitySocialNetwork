@@ -58,7 +58,7 @@ function ratio(starPush){
 
     $.ajax({
       data: parametros,
-      url:'publicacion.php',
+      url:'../BACK-PHP/consumirAPI_Foro..php',
       method:'POST',
       responseType:'json',
     }).then(function(data){

@@ -8,9 +8,9 @@
         <!--CSS-->
         <link href="../css/foro.css" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-
-
+        <script src="https://kit.fontawesome.com/4a8e5f3b5a.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </head>
 
     <body>
@@ -77,11 +77,11 @@
 
                                 <select class="form-control form_category" id="opciones">
                                     <option selected class="form_control_selected">Categoria*</option>
-                                    <option>Tema 1</option>
-                                    <option>Tema 2</option>
-                                    <option>Tema 3</option>
-                                    <option>Tema 4</option>
-                                    <option>Tema 5</option>
+                                    <option value="1">Tema 1</option>
+                                    <option value="2">Tema 2</option>
+                                    <option value="3">Tema 3</option>
+                                    <option value="4">Tema 4</option>
+                                    <option value="5">Tema 5</option>
                                 </select>
                                 <label class="col-8">Fotografía para el post</label><input class="col-7 mx-auto " type="file" id="imagen" onchange="Img()";>
                                 <img class="col-8" id="imagencargada"  src="../Images/image_not_available.png" />
@@ -146,12 +146,9 @@
 
         </div>
         <!--JS-->
-
-        <script src="https://kit.fontawesome.com/4a8e5f3b5a.js" crossorigin="anonymous"></script>
-        <script src="../js/foro.js"></script>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script type="text/javascript" src="../js/publicar.js"></script>
+        <script src="../js/foro.js"></script>
+        
     </body>
 
 </html>
