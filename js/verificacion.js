@@ -19,6 +19,8 @@ function verradiovalue(){
 
   });
 }
+
+
 function redirect(){
   window.location.replace("registro.html");
 }

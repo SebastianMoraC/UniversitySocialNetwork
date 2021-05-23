@@ -1,5 +1,15 @@
+<<<<<<< HEAD
 const { param } = require("jquery");
 var contImg="";
+=======
+var usuario='';
+
+function reconocerusuario(usuario){
+  usurio=usuario; //guarda el usuario q ha ingresado
+}
+
+
+>>>>>>> javascript
 function Img(){
   var reader = new FileReader();
   reader.readAsDataURL(document.getElementById("imagen").files[0]);
@@ -18,6 +28,7 @@ function publicar(){
   var lista = document.getElementById("opciones");
   var indiceSeleccionado = lista.selectedIndex;
   var opcionSeleccionada = lista.options[indiceSeleccionado];
+  var imag=document.getElementById("imagen").files[0];
   alert('nombre del autor: '+autor.value+
   '\n nombre de la publicacion: '+nombre.value+
   '\n enlace: '+enlace.value+
@@ -31,12 +42,17 @@ function publicar(){
     "enlace":enlace.value,
     "texto":texto.value,
     "opcion":opcionSeleccionada.value,
+    "imagen":imag
   }
   
 
   $.ajax({
     data: parametros,
+<<<<<<< HEAD
     url:'../BACK-PHP/consumirAPI_Foro.php',
+=======
+    url:'../BACK-PHP/publicacion.php',
+>>>>>>> javascript
     method:'POST',
     responseType:'json',
   }).then(function(data){

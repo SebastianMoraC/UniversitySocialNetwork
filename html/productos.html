@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="../css/productos.css">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <title>Productos</title>
 </head>
 <body>
-  
+
     <!--NAVBAR-->
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -21,7 +22,7 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-    
+
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
@@ -43,7 +44,7 @@
             </div>
           </li>
         </ul>
-        
+
       </div>
     </nav>
 
@@ -70,10 +71,20 @@
                             <form name="formproducto">
                               <label class="col-lg-4 col-sm-10"> Foto del Producto</label><input class="col-lg-7 col-sm-12 mx-auto " type="file"  id="imagen" onchange="Img()";>
                               <img class="col-8" id="imagencargada"  src="../Images/image_not_available.png" />
+                              <label class="col-lg-4 col-sm-10"> Titulo venta</label><input  type="text" class="col-lg-7 col-sm-12 mx-auto inputText" value="" name="tituloventa">
                               <label class="col-lg-4 col-sm-10"> Nombre del vendedor</label><input  type="text" class="col-lg-7 col-sm-12 mx-auto inputText" value="" name="vendedor">
                               <label class="col-lg-4 col-sm-10"> Precio del producto</label><input  type="text" class="col-lg-7 col-sm-12 mx-auto inputText"  value="" name="precio">
                               <label class="col-lg-4 col-sm-10"> Descripcion del producto</label><textarea  class="col-lg-7 col-sm-12 inputText" rows="2" name="descripcion"></textarea >
                               <label class="col-lg-4 col-sm-10"> Ubicacion</label><input type="text" class="col-lg-7 col-sm-12 mx-auto inputText"  value="" name="ubicacion">
+                              <label class="col-lg-4 col-sm-10"> Estado venta</label><input type="text" class="col-lg-7 col-sm-12 mx-auto inputText"  value="" name="estadoventa">
+                              <label class="col-lg-4 col-sm-10"> Categorias</label>
+                              <div class="col-lg-12" id="tipos_categorias">
+                                <input type="checkbox" value="Categoria1" name="categoria">Categoria 1
+                                <input type="checkbox" value="Categoria2" name="categoria">Categoria 2
+                                <input type="checkbox" value="Categoria3" name="categoria">Categoria 3
+                                <input type="checkbox" value="Categoria4" name="categoria">Categoria 4
+                                <input type="checkbox" value="Categoria5" name="categoria">Categoria 5
+                              </div>
                             </form>
 
                           </div>
