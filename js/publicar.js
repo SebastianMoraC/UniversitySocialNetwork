@@ -1,4 +1,4 @@
-const { param } = require("jquery");
+
 var contImg="";
 function Img(){
   var reader = new FileReader();
@@ -31,8 +31,7 @@ function publicar(){
     "nombre":nombre.value,
     "enlace":enlace.value,
     "texto":texto.value,
-    "opcion":opcionSeleccionada.value,
-    "imagen":imag
+    "opcion":opcionSeleccionada.value
   }
   
 
@@ -42,7 +41,9 @@ function publicar(){
     method:'POST',
     responseType:'json',
   }).then(function(data){
+    console.log(data);
     var datos=JSON.parse(data);
+
     alert(datos.id_post);//Retorna el id de la publicacion que se acaba de crear
   });
 
@@ -64,6 +65,7 @@ function comentario(){
     method:'POST',
     responseType:'json',
   }).then(function(data){
+    
     var datos=JSON.parse(data);
   });
 

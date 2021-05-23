@@ -53,7 +53,7 @@ include '../BACK-PHP/ApiRest.php';
                     copy($_POST["dataImag"],$ruta_foto);
                     $query="UPDATE post SET ubicacion_foto_post='".$ruta_foto."'WHERE id_post='".$resultado["id_post"]."'";
                     $resultadoPUT=methodPUT($query);
-                    
+
                 }
             }else{
                 $resultado=array('id_usuario' => "CorreoNoRegistrado");
@@ -61,6 +61,22 @@ include '../BACK-PHP/ApiRest.php';
             echo json_encode($resultado);
             exit();
         }
+    }
+    elseif($_SERVER['REQUEST_METHOD']=='GET'){
+            if(isset($_GET['post'])){
+                header("HTTP/1.1 200 OK");
+                $query="SELECT * FROM  post";
+                $resultado=methodGET($query);
+                echo json_encode($resultado->fetchAll());
+                exit();
+            }
+            elseif(isset($_GET['resenias'])){
+                header("HTTP/1.1 200 OK");
+                $query="SELECT resenia, id_usuario FROM  resenias WHERE id_post='".$_GET["post"]."'";
+                $resultado=methodGET($query);
+                echo json_encode($resultado->fetchAll());
+                exit();
+            }
     }
 
     
