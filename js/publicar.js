@@ -1,11 +1,11 @@
 const { param } = require("jquery");
-
+var contImg="";
 function Img(){
   var reader = new FileReader();
   reader.readAsDataURL(document.getElementById("imagen").files[0]);
   reader.onload=function(e){
     document.getElementById('imagencargada').src = e.target.result;
-    console.log(document.getElementById('imagencargada').src)
+    contImg=document.getElementById('imagencargada').src;
   }
 }
 
@@ -25,6 +25,7 @@ function publicar(){
   '\n opcion: '+ opcionSeleccionada.value);
 
   var parametros={
+    "dataImag":contImg,
     "autor":autor.value,
     "nombre":nombre.value,
     "enlace":enlace.value,
@@ -32,14 +33,15 @@ function publicar(){
     "opcion":opcionSeleccionada.value,
   }
   
+
   $.ajax({
     data: parametros,
     url:'../BACK-PHP/consumirAPI_Foro.php',
     method:'POST',
     responseType:'json',
   }).then(function(data){
-    console.log(data);
     var datos=JSON.parse(data);
+    alert(datos.id_post);//Retorna el id de la publicacion que se acaba de crear
   });
 
 }

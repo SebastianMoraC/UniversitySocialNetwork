@@ -47,6 +47,14 @@ include '../BACK-PHP/ApiRest.php';
                 $query=" INSERT INTO  post (id_usuario,nombre_post,descripcion_post,tema_categoria,enlace_post) VALUES ('".$resultado["id_usuario"]."','".$_POST["nombre"]."','".$_POST["texto"]."','".$_POST["opcion"]."','".$_POST["enlace"]."')";
                 $id="SELECT MAX(id_post) AS id_post FROM post WHERE id_usuario='".$resultado["id_usuario"]."'";
                 $resultado=methodPOST($query, $id)->fetch(PDO::FETCH_ASSOC);
+
+                if(!($_POST["dataImag"]=="")){
+                    $ruta_foto="../imgs_posts/imgPost_".$resultado["id_post"].".jpeg";
+                    copy($_POST["dataImag"],$ruta_foto);
+                    $query="UPDATE post SET ubicacion_foto_post='".$ruta_foto."'WHERE id_post='".$resultado["id_post"]."'";
+                    $resultadoPUT=methodPUT($query);
+                    
+                }
             }else{
                 $resultado=array('id_usuario' => "CorreoNoRegistrado");
             }
