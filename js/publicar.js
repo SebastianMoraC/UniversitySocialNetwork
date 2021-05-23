@@ -1,15 +1,5 @@
-<<<<<<< HEAD
 const { param } = require("jquery");
 var contImg="";
-=======
-var usuario='';
-
-function reconocerusuario(usuario){
-  usurio=usuario; //guarda el usuario q ha ingresado
-}
-
-
->>>>>>> javascript
 function Img(){
   var reader = new FileReader();
   reader.readAsDataURL(document.getElementById("imagen").files[0]);
@@ -48,11 +38,7 @@ function publicar(){
 
   $.ajax({
     data: parametros,
-<<<<<<< HEAD
     url:'../BACK-PHP/consumirAPI_Foro.php',
-=======
-    url:'../BACK-PHP/publicacion.php',
->>>>>>> javascript
     method:'POST',
     responseType:'json',
   }).then(function(data){
