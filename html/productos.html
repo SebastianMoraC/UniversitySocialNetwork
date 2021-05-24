@@ -1,131 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/productos.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/productos.css">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
 
-    <title>Productos</title>
+  <title>Productos</title>
 </head>
+
 <body>
 
-    <!--NAVBAR-->
+  <!--NAVBAR-->
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">University Social Network</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">University Social Network</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="foro.html">Foro <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="productos.html">Productos</a>
-          </li>
-          <li class="nav-item dropdown active ">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Perfil
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="perfil.html">Perfil</a>
-              <a class="dropdown-item" href="pedidos.html">Mis Pedidos</a>
-              <a class="dropdown-item" href="estadisticas.html">Estadisticas</a>
-              <hr class="dropdown-divider">
-              <a class="dropdown-item" href="loging.html">Cerrar Sesión</a>
-            </div>
-          </li>
-        </ul>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="foro.html">Foro <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="productos.html">Productos</a>
+        </li>
+        <li class="nav-item dropdown active ">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Perfil
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="perfil.html">Perfil</a>
+            <a class="dropdown-item" href="pedidos.html">Mis Pedidos</a>
+            <a class="dropdown-item" href="estadisticas.html">Estadisticas</a>
+            <hr class="dropdown-divider">
+            <a class="dropdown-item" href="loging.html">Cerrar Sesión</a>
+          </div>
+        </li>
+      </ul>
 
-      </div>
-    </nav>
+    </div>
+  </nav>
 
 
   <!--END NAVBAR-->
 
-    <div class="mx-auto col-12">
-        <div class="container divConttainer">
-            <h1 class="h_tittle">Productos</h1>
-            <div class="row divcreacion col-10 mx-auto">
-                <h3 class="col-8 h_crear" >Creacion de producto</h3>
-                <input type="button" class="col-2 mx-auto button" value="Crear" data-toggle="modal" data-target="#modalCrear">                   <!--Boton abre modal-->
+  <div class="mx-auto col-12">
+    <div class="container divConttainer">
+      <h1 class="h_tittle">Productos</h1>
+      <div class="row divcreacion col-10 mx-auto">
+        <h3 class="col-8 h_crear">Creacion de producto</h3>
+        <input type="button" class="col-2 mx-auto button" value="Crear" data-toggle="modal" data-target="#modalCrear">
+        <!--Boton abre modal-->
+      </div>
+      <div class="col-12">
+        <!--Modal inicio-->
+        <div class="modal col-6 mx-auto" id="modalCrear" tabindex="-1" role="dialog" aria-labelledby="Crear Producto"
+          aria-hidden="true">
+          <br><br>
+          <div class="modal-lg-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2>Crear Producto</h2>
+                <button class="close" data-dismiss="modal" area-label="Cerrar"><span
+                    aria-hidden="true">&times;</span></button>
+                <!--Simbolo "X" cierra modal-->
+              </div>
+              <div class="modal-body centerInput">
+                <form name="formproducto">
+                  <label class="col-lg-4 col-sm-10"> Foto del Producto</label><input class="col-lg-7 col-sm-12 mx-auto "
+                    type="file" id="imagen" onchange="Img()" ;>
+                  <img class="col-8" id="imagencargada" src="../Images/image_not_available.png" />
+                  <label class="col-lg-4 col-sm-10"> Titulo venta</label><input type="text"
+                    class="col-lg-7 col-sm-12 mx-auto inputText" value="" name="tituloventa">
+                  <label class="col-lg-4 col-sm-10"> Nombre del vendedor</label><input type="text"
+                    class="col-lg-7 col-sm-12 mx-auto inputText" value="" name="vendedor">
+                  <label class="col-lg-4 col-sm-10"> Precio del producto</label><input type="text"
+                    class="col-lg-7 col-sm-12 mx-auto inputText" value="" name="precio">
+                  <label class="col-lg-4 col-sm-10"> Descripcion del producto</label><textarea
+                    class="col-lg-7 col-sm-12 inputText" rows="2" name="descripcion"></textarea>
+                  <label class="col-lg-4 col-sm-10"> Ubicacion</label><input type="text"
+                    class="col-lg-7 col-sm-12 mx-auto inputText" value="" name="ubicacion">
+                  <label class="col-lg-4 col-sm-10"> Estado venta</label><input type="text"
+                    class="col-lg-7 col-sm-12 mx-auto inputText" value="" name="estadoventa">
+                  <label class="col-lg-4 col-sm-10"> Categorias</label>
+                  <div class="col-lg-12" id="tipos_categorias">
+                    <input type="checkbox" value="Categoria1" name="categoria">Categoria 1
+                    <input type="checkbox" value="Categoria2" name="categoria">Categoria 2
+                    <input type="checkbox" value="Categoria3" name="categoria">Categoria 3
+                    <input type="checkbox" value="Categoria4" name="categoria">Categoria 4
+                    <input type="checkbox" value="Categoria5" name="categoria">Categoria 5
+                  </div>
+                </form>
+
+              </div>
+              <div class="modal-footer text-center">
+                <button type="button" class="col-4 button" data-dismiss="modal">Regresar</button>
+                <!--Cierra Modal-->
+                <button type="button" class="col-4 button" onclick="crear_producto();">Crear</button>
+
+              </div>
             </div>
-                <div class="col-12">
-                  <!--Modal inicio-->
-                    <div class="modal col-6 mx-auto"  id="modalCrear" tabindex="-1" role="dialog" aria-labelledby="Crear Producto" aria-hidden="true">
-                      <br><br><div class="modal-lg-dialog" role="document">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                              <h2>Crear Producto</h2>
-                              <button class="close" data-dismiss="modal" area-label="Cerrar"><span aria-hidden="true">&times;</span></button> <!--Simbolo "X" cierra modal-->
-                          </div>
-                          <div class="modal-body centerInput">
-                            <form name="formproducto">
-                              <label class="col-lg-4 col-sm-10"> Foto del Producto</label><input class="col-lg-7 col-sm-12 mx-auto " type="file"  id="imagen" onchange="Img()";>
-                              <img class="col-8" id="imagencargada"  src="../Images/image_not_available.png" />
-                              <label class="col-lg-4 col-sm-10"> Titulo venta</label><input  type="text" class="col-lg-7 col-sm-12 mx-auto inputText" value="" name="tituloventa">
-                              <label class="col-lg-4 col-sm-10"> Nombre del vendedor</label><input  type="text" class="col-lg-7 col-sm-12 mx-auto inputText" value="" name="vendedor">
-                              <label class="col-lg-4 col-sm-10"> Precio del producto</label><input  type="text" class="col-lg-7 col-sm-12 mx-auto inputText"  value="" name="precio">
-                              <label class="col-lg-4 col-sm-10"> Descripcion del producto</label><textarea  class="col-lg-7 col-sm-12 inputText" rows="2" name="descripcion"></textarea >
-                              <label class="col-lg-4 col-sm-10"> Ubicacion</label><input type="text" class="col-lg-7 col-sm-12 mx-auto inputText"  value="" name="ubicacion">
-                              <label class="col-lg-4 col-sm-10"> Estado venta</label><input type="text" class="col-lg-7 col-sm-12 mx-auto inputText"  value="" name="estadoventa">
-                              <label class="col-lg-4 col-sm-10"> Categorias</label>
-                              <div class="col-lg-12" id="tipos_categorias">
-                                <input type="checkbox" value="Categoria1" name="categoria">Categoria 1
-                                <input type="checkbox" value="Categoria2" name="categoria">Categoria 2
-                                <input type="checkbox" value="Categoria3" name="categoria">Categoria 3
-                                <input type="checkbox" value="Categoria4" name="categoria">Categoria 4
-                                <input type="checkbox" value="Categoria5" name="categoria">Categoria 5
-                              </div>
-                            </form>
-
-                          </div>
-                          <div class="modal-footer text-center">
-                            <button type="button" class="col-4 button" data-dismiss="modal" >Regresar</button> <!--Cierra Modal-->
-                            <button type="button" class="col-4 button" onclick="crear_producto();">Crear</button>
-
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  <!--Modal fin-->
-                  </div>
-            <div id="list_productos" class="text-center mx-auto col-10 divContainer">
-                <div class="row divProductos">
-                  <div class="col-lg-7 col-sm-12 text-left">
-                    <b>Nombre vendedor: </b><label>Julian Ospina</label><br>
-                    <b>Precio producto: </b><label>$1.000 cop</label><br>
-                    <b>Descripcion: </b><label>Empanada con carne de unicornio</label><br>
-                    <b>Ubicacion: </b><label>UTP</label>
-                  </div>
-                  <div class="col-lg-4 col-sm-12">
-                      <img src="../Images/empanada.jpg" width="250px">
-                  </div>
-                </div>
-
-
-                <div class="row divProductos">
-                  <div class="col-lg-7 col-sm-12 text-left">
-                    <b>Nombre vendedor: </b><label>Julian Ospina</label><br>
-                    <b>Precio producto: </b><label>$2.000 cop</label><br>
-                    <b>Descripcion: </b><label>Empanada 2 con carne de unicornio</label><br>
-                    <b>Ubicacion: </b><label>UTP</label>
-                  </div>
-                  <div class="col-lg-4 col-sm-12">
-                      <img src="../Images/empanada.jpg" width="250px">
-                  </div>
-                </div>
+          </div>
         </div>
+        <!--Modal fin-->
+      </div>
+      <div id="list_productos" class="text-center mx-auto col-10 divContainer">
+        <div class="row divProductos">
+          <!--PRODUCT 1-->
+          <div class="col-lg-7 col-sm-12 text-left">
+            <b>Nombre vendedor: </b><label>Julian Ospina</label><br>
+            <b>Precio producto: </b><label>$1.000 cop</label><br>
+            <b>Descripcion: </b><label>Empanada con carne de unicornio</label><br>
+            <b>Ubicacion: </b><label>UTP</label>
+
+
+          </div>
+          <div class="col-lg-4 col-sm-12">
+            <img src="../Images/empanada.jpg" width="250px">
+          </div>
+          <div class="col-lg-7 col-sm-12">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
+            <!--/BUTTON-->
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+              aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Comprar Producto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form name="formproducto">
+                      <label class="col-4">Lugar de Envio</label><input type="text"
+                        class="mx-auto inputText col-8" value="" name="tituloventa">
+                      <label class="col-4"> Cantidad</label>
+                      <select class="custom-select custom-select-sm">
+                        
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="1">4</option>
+                        <option value="2">5</option>
+                        <option value="3">6</option>
+                      </select>
+                      
+                      <label class="col-12">Precio</label>
+                      <input type="text" class="contact-form__input form-control" value="5.000" disabled>
+                    
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-success" data-dismiss="modal" onclick="comprarProducto();">Comprar</button>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            <!--/MODAL-->
+          </div>
+        </div>
+        <!--/PRODUCT 1-->
+        <!--PRODUCT 2-->
+        <div class="row divProductos">
+          <div class="col-lg-7 col-sm-12 text-left">
+            <b>Nombre vendedor: </b><label>Julian Ospina</label><br>
+            <b>Precio producto: </b><label>$1.000 cop</label><br>
+            <b>Descripcion: </b><label>Empanada con carne de unicornio</label><br>
+            <b>Ubicacion: </b><label>UTP</label>
+
+
+          </div>
+          <div class="col-lg-4 col-sm-12">
+            <img src="../Images/empanada.jpg" width="250px">
+          </div>
+          <div class="col-lg-7 col-sm-12">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
+            <!--/BUTTON-->
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+              aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Comprar Producto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form name="formproducto">
+                      <label class="col-4">Lugar de Envio</label><input type="text"
+                        class="mx-auto inputText col-8" value="" name="tituloventa">
+                      <label class="col-4"> Cantidad</label>
+                      <select class="custom-select custom-select-sm">
+                        
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="1">4</option>
+                        <option value="2">5</option>
+                        <option value="3">6</option>
+                      </select>
+                      
+                      <label class="col-12">Precio</label>
+                      <input type="text" class="contact-form__input form-control" value="5.000" disabled>
+                    
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-success" data-dismiss="modal" onclick="comprarProducto();">Comprar</button>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            <!--/MODAL-->
+          </div>
+        </div>
+        <!--/PRODUCT 2-->
+      </div>
     </div>
 
-<script type="text/javascript" src="../js/producto.js"></script>
+    <script type="text/javascript" src="../js/producto.js"></script>
 </body>
+
 </html>
