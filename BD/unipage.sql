@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-05-2021 a las 04:08:10
+-- Tiempo de generación: 24-05-2021 a las 04:36:35
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 7.4.19
 
@@ -60,7 +60,8 @@ INSERT INTO `post` (`id_post`, `id_usuario`, `nombre_post`, `descripcion_post`, 
 (3, 1, 'prueba de post 2', 'Como se mencionó anteriormente, si no se especifica una clave, se toma el máximo de los índices integer existentes, y la nueva clave será ese valor máximo más 1 (aunque al menos 0). ', '5', 0, NULL, 'http://localhost/TrabajoIngSotf/UniversitySocialNetwork/html/foro.html', NULL),
 (10, 1, 'prueba de post con imagen', 'Día de la Tierra: 10 datos fascinantes sobre nuestro planeta', '1', 0, NULL, 'https://www.bbc.com/mundo/noticias-52369218', '../imgs_posts/imgPost_10.jpeg'),
 (11, 1, 'prueba de post con imagen2', 'Día de la Tierra: 10 datos fascinantes sobre nuestro planeta', '2', 0, NULL, 'https://www.bbc.com/mundo/noticias-52369218', '../imgs_posts/imgPost_11.jpeg'),
-(12, 3, 'whatsapp', 'muy bueno', '1', 0, NULL, 'www.google.co', '../imgs_posts/imgPost_12.jpeg');
+(13, 3, 'Ana Sofia Beltran', 's', '1', 0, NULL, 'www.google.co', '../imgs_posts/imgPost_13.jpeg'),
+(14, 2, 'publicacion3', 'aaaaaa', '2', 0, NULL, 'www.edu.co', '../imgs_posts/imgPost_14.jpeg');
 
 -- --------------------------------------------------------
 
@@ -212,7 +213,7 @@ ALTER TABLE `categorias_venta`
 -- AUTO_INCREMENT de la tabla `post`
 --
 ALTER TABLE `post`
-  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `reg_pedidos`
