@@ -76,8 +76,7 @@ $.ajax({
 
 
 function count(totalCategories, interestCategories) {
-    console.log(totalCategories);
-    console.log(interestCategories);
+
     countData = []
     for (var i = 1; i <= totalCategories; i++) {
         countData.push(parseInt(0));
