@@ -94,7 +94,22 @@ i.fas{
 .form_category:focus{
     color: black;
 }
+.comments__comment{
+    border: solid 3px black;
 
+}
+.comment__author{
+    font-size: 20px;
+    padding-left: 25px;
+}
+.comment__date{
+    font-size: 20px;
+    padding-left: 25px;
+}
+.comments__ratio{
+    
+   margin-bottom: 20px;
+}
 
 
 
