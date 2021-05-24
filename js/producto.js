@@ -1,3 +1,6 @@
+function comprarProducto() {
+  
+}
 function Img(){
   var reader = new FileReader();
   reader.readAsDataURL(document.getElementById("imagen").files[0]);
