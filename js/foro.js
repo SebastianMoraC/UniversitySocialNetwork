@@ -69,7 +69,26 @@ function ratio(starPush,id){
       method:'POST',
       responseType:'json',
     }).then(function(data){
+        console.log(data);
       var datos=JSON.parse(data);
     });
 
 }
+
+
+
+function cargarComentarios(){
+
+
+    $.ajax({
+        url:'../BACK-PHP/consumirAPI_Foro.php?reseniasPost= 1'/* remplaza el "1" por la variable con el id de la publicacion que quiere traer sus comentarios*/,
+        method:'GET',
+        responseType:'json',
+      }).then(function(data){
+          
+          var datos=JSON.parse(data);
+          console.log(datos); //Aca estan los comentarios referentes a el id de la publicaon "1"!!!!! 
+      });
+
+}
+cargarComentarios();// ACA LLAMO LA FUNCION PARA CARGAR LOS COMENTRIOS

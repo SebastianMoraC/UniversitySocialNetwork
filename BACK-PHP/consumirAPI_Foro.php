@@ -7,22 +7,22 @@ include '../BACK-PHP/ApiRest.php';
 
 
     if($_SERVER['REQUEST_METHOD']=='POST'){
-        if(isset($_POST["publicacion_comentario"])){
+        if(isset($_POST['comentario_publicacion'])){
             header("HTTP/1.1 200 OK");
 
             $query="INSERT INTO resenias  (id_usuario,resenia,id_post) VALUES ('".$_POST["usuario"]."','".$_POST["comentario_publicacion"]."','".$_POST["idpublicacion"]."')";
-            $id_resenia="SELECT MAX(id_resenia) AS id_resenia FROM resenia WHERE id_post = '".$_POST["idpublicacion"]."' AND id_usuario='".$_POST["usuario"]."'";
-            $id_Nresenia=methodPOST($query, $id)->fetch(PDO::FETCH_ASSOC);
+            $id_resenia="SELECT MAX(id_resenia) AS id_resenia FROM resenias WHERE id_post = '".$_POST["idpublicacion"]."' AND id_usuario='".$_POST["usuario"]."'";
+            $id_Nresenia=methodPOST($query, $id_resenia)->fetch(PDO::FETCH_ASSOC);
 
             $query="SELECT id_resenias FROM post WHERE id_post='".$_POST["idpublicacion"]."'";
             $ids_resenias=methodGET($query)->fetch(PDO::FETCH_ASSOC);
 
             $nuevaresenia=$ids_resenias["id_resenias"];
 
-            if($ids_resenias != "NULL"){
-                $nuevaresenia= $nuevaresenia.",".$id_Nresenia;
+            if($nuevaresenia != ""){
+                $nuevaresenia= $nuevaresenia.",".$id_Nresenia["id_resenia"];
             }else{
-                $nuevaresenia=$id_Nresenia;
+                $nuevaresenia=$id_Nresenia["id_resenia"];
             }
 
             $query="UPDATE post SET id_resenias='".$nuevaresenia."'WHERE id_post='".$_POST["idpublicacion"]."'";
@@ -33,9 +33,8 @@ include '../BACK-PHP/ApiRest.php';
 
             $query="SELECT cont_likes_post FROM post WHERE id_post='".$_POST["idpublicacion"]."'";
             $canridad_likes=methodGET($query)->fetch(PDO::FETCH_ASSOC);
-
-            $nuevoCont=chr(intval($canridad_likes["cont_likes_post"])+intval($_POST["cantidad_estrellas"]));
-            
+            $nuevoCont=intval($canridad_likes["cont_likes_post"])+intval($_POST["cantidad_estrellas"]);
+            echo $nuevoCont;
             $query="UPDATE post SET cont_likes_post='".$nuevoCont."'WHERE id_post='".$_POST["idpublicacion"]."'";
             $resultado=methodPUT($query);
             echo json_encode($resultado->fetch(PDO::FETCH_ASSOC));
@@ -74,9 +73,9 @@ include '../BACK-PHP/ApiRest.php';
                 echo json_encode($resultado->fetchAll());
                 exit();
             }
-            elseif(isset($_GET['resenias'])){
+            elseif(isset($_GET['reseniasPost'])){
                 header("HTTP/1.1 200 OK");
-                $query="SELECT resenia, id_usuario FROM  resenias WHERE id_post='".$_GET["usuario"]."'";
+                $query="SELECT * FROM  resenias WHERE id_post='".$_GET["reseniasPost"]."'";
                 $resultado=methodGET($query);
                 echo json_encode($resultado->fetchAll());
                 exit();

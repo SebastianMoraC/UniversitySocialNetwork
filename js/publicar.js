@@ -1,6 +1,8 @@
 rellenarpublicaciones();
 
 
+
+
 var contImg = "";
 function Img() {
   var reader = new FileReader();
@@ -22,7 +24,6 @@ function rellenarpublicaciones() {
     var datosTemas = JSON.parse(data);
 
     var divpublicaciones = document.getElementById("publicaciones");
-    console.log(Object.keys(datosTemas).length);
     for (var i = 0; i < Object.keys(datosTemas).length; i++) {
       divpublicaciones.innerHTML = divpublicaciones.innerHTML + `
       <div class="publication row">
@@ -66,7 +67,6 @@ function rellenarpublicaciones() {
                     <b class="comment__author col-12">Sebastián Mora Carmona</b>
                     <p class="col-12">
                       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa veritatis voluptate dignissimos. Quisquam eos nulla deserunt, voluptatibus aspernatur consectetur exercitationem vitae mollitia atque ad perspiciatis, id quo. Laudantium, quaerat nesciunt!
-
                     </p>
 
 
@@ -119,6 +119,8 @@ function publicar() {
     responseType: 'json',
   }).then(function (data) {
     console.log(data);
+
+    console.log(data);
     var datos = JSON.parse(data);
   });
 
@@ -142,11 +144,11 @@ function comentario(id) {
 
   $.ajax({
     data: parametros,
-    url: '../BACK-PHP/consumirAPI_Foro.php?publicacion_comentario',
+    url: '../BACK-PHP/consumirAPI_Foro.php',
     method: 'POST',
     responseType: 'json',
   }).then(function (data) {
-
+    console.log(data);
     var datos = JSON.parse(data);
   });
 
