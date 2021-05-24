@@ -1,4 +1,5 @@
 function ratio(starPush){
+    var usuario = verusuario();
     var starOne = document.getElementById("starOne");
     var starTwo = document.getElementById("starTwo");
     var starThree = document.getElementById("starThree");
@@ -64,5 +65,5 @@ function ratio(starPush){
     }).then(function(data){
       var datos=JSON.parse(data);
     });
-
+    alert(" id del usuario ="+usuario)
 }

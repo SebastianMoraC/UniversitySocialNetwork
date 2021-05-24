@@ -1,3 +1,5 @@
+/*rellenarpublicaciones();*/
+
 
 var contImg="";
 function Img(){
@@ -7,6 +9,65 @@ function Img(){
     document.getElementById('imagencargada').src = e.target.result;
     contImg=document.getElementById('imagencargada').src;
   }
+}
+
+function rellenarpublicaciones(){
+
+  $.ajax({
+    url:'../BACK-PHP/consumirAPI_llenasPost.php',
+    method:'GET',
+    responseType:'json',
+  }).then(function(data){
+    var datospublicaciones=JSON.parse(data);
+    var divpublicaciones=document.getElementById("publicaciones");
+
+    for(var i=0;i<Object.keys(datospublicaciones).length;i++){
+      divpublicaciones.innerHTML=divpublicaciones.innerHTML+`<div class="publication row">
+          <div class="container col-12">
+              <div class="row">
+                  <h2 class="publication_name col-8">${datosTemas[i].nombre_post}</h1>
+                  <a class="col-2 publication_date" href="">${datosTemas[i].enlace_post}</a>
+              </div>
+              <div class="row">
+              <b class="publication_category column">Categoria: ${datosTemas[i].tema_categoria}</b>
+              </div>
+
+              <p class="publication_text row">${datosTemas[i].descripcion_post}</p>
+              <div class="publication_image row">
+                  <img src="${datosTemas[i].ubicacion_foto_post}" class="rounded mx-auto d-block publication_image_item ">
+              </div>
+
+              <b class="publication_author row">Autor: ${datosTemas[i].id_usuario}</b>
+
+          </div>
+          <div class="publication_ratio col-12">
+              <i class="far fa-star fa-2x publication__star" id="starOne" onclick="ratio(this.id);" ></i>
+              <i class="far fa-star fa-2x publication__star" id="starTwo" onclick="ratio(this.id);"></i>
+              <i class="far fa-star fa-2x publication__star" id="starThree" onclick="ratio(this.id);"></i>
+              <i class="far fa-star fa-2x publication__star" id="starFour" onclick="ratio(this.id);"></i>
+              <i class="far fa-star fa-2x publication__star" id="starFive" onclick="ratio(this.id);"></i>
+          </div>
+          <div class="publication_comments container col-12">
+              <div class="publication_comments_create row">
+                  <div class="input-group mb-3">
+                      <input type="text" class="form-control" placeholder="Agregue un comentario" aria-label="Recipient's username" aria-describedby="basic-addon2" id='publicacion'>
+                      <div class="input-group-append">
+                          <button class="btn btn-outline-secondary" type="button" onclick="comentario();">Comentar</button>
+                      </div>
+                  </div>
+
+              </div>
+              <div class="publication_comments__text row">
+
+              </div>
+          </div>
+          <div >
+            <input type="text" readonly="readonly" class="form-control" placeholder="id=${datosTemas[i].id_post}" aria-label="Recipient's username" aria-describedby="basic-addon2" id='id_publicacion'>
+          </div>
+      </div>`
+
+    }
+  });
 }
 
 
@@ -33,7 +94,7 @@ function publicar(){
     "texto":texto.value,
     "opcion":opcionSeleccionada.value
   }
-  
+
 
   $.ajax({
     data: parametros,
@@ -43,8 +104,6 @@ function publicar(){
   }).then(function(data){
     console.log(data);
     var datos=JSON.parse(data);
-
-    alert(datos.id_post);//Retorna el id de la publicacion que se acaba de crear
   });
 
 }
@@ -65,9 +124,8 @@ function comentario(){
     method:'POST',
     responseType:'json',
   }).then(function(data){
-    
+
     var datos=JSON.parse(data);
   });
 
 }
-

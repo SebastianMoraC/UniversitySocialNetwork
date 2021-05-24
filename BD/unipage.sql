@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-05-2021 a las 23:37:46
--- Versión del servidor: 10.4.18-MariaDB
--- Versión de PHP: 8.0.3
+-- Tiempo de generación: 24-05-2021 a las 04:08:10
+-- Versión del servidor: 10.4.19-MariaDB
+-- Versión de PHP: 7.4.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -59,7 +59,8 @@ INSERT INTO `post` (`id_post`, `id_usuario`, `nombre_post`, `descripcion_post`, 
 (2, 1, 'prueba de post 2', 'Como se mencionó anteriormente, si no se especifica una clave, se toma el máximo de los índices integer existentes, y la nueva clave será ese valor máximo más 1 (aunque al menos 0). ', '1', 0, NULL, 'http://localhost/TrabajoIngSotf/UniversitySocialNetwork/html/foro.html', NULL),
 (3, 1, 'prueba de post 2', 'Como se mencionó anteriormente, si no se especifica una clave, se toma el máximo de los índices integer existentes, y la nueva clave será ese valor máximo más 1 (aunque al menos 0). ', '5', 0, NULL, 'http://localhost/TrabajoIngSotf/UniversitySocialNetwork/html/foro.html', NULL),
 (10, 1, 'prueba de post con imagen', 'Día de la Tierra: 10 datos fascinantes sobre nuestro planeta', '1', 0, NULL, 'https://www.bbc.com/mundo/noticias-52369218', '../imgs_posts/imgPost_10.jpeg'),
-(11, 1, 'prueba de post con imagen2', 'Día de la Tierra: 10 datos fascinantes sobre nuestro planeta', '2', 0, NULL, 'https://www.bbc.com/mundo/noticias-52369218', '../imgs_posts/imgPost_11.jpeg');
+(11, 1, 'prueba de post con imagen2', 'Día de la Tierra: 10 datos fascinantes sobre nuestro planeta', '2', 0, NULL, 'https://www.bbc.com/mundo/noticias-52369218', '../imgs_posts/imgPost_11.jpeg'),
+(12, 3, 'whatsapp', 'muy bueno', '1', 0, NULL, 'www.google.co', '../imgs_posts/imgPost_12.jpeg');
 
 -- --------------------------------------------------------
 
@@ -130,8 +131,9 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `nombre_usuario`, `apellido_usuario`, `correo_usuario`, `password_usuario`, `id_tema_interes_usuario`, `tipo_usuario`, `ubicacion_foto_usuario`, `universidad_usuario`) VALUES
-(1, 'Jhon ', 'Parra', 'j.prueba@utp.edu.co', '123', '1', '2', NULL, 'qwe'),
-(2, 'Jhon ', 'Parra', 'j.prueba2@utp.edu.co', '123', '1,2', '2', NULL, 'qwe');
+(1, 'Jhon ', 'Parra', 'j.prueba@utp.edu.co', '123', '1,', '2', NULL, 'qwe'),
+(2, 'Jhon ', 'Parra', 'j.prueba2@utp.edu.co', '123', '1,', '2', NULL, 'qwe'),
+(3, 'Ana Sofia', 'Beltran Rios', 'anasofia.beltran@utp.edu.co', '12345', '1,', '2', NULL, 'UTP');
 
 -- --------------------------------------------------------
 
@@ -210,7 +212,7 @@ ALTER TABLE `categorias_venta`
 -- AUTO_INCREMENT de la tabla `post`
 --
 ALTER TABLE `post`
-  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `reg_pedidos`
@@ -234,7 +236,7 @@ ALTER TABLE `temas`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_usuario` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `venta`
