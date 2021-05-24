@@ -96,6 +96,7 @@ i.fas{
 }
 .comments__comment{
     border: solid 3px black;
+    margin-top:10px;
 
 }
 .comment__author{
