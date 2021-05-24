@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-05-2021 a las 22:30:15
--- Versión del servidor: 10.4.18-MariaDB
--- Versión de PHP: 8.0.3
+-- Tiempo de generación: 25-05-2021 a las 00:15:10
+-- Versión del servidor: 10.4.19-MariaDB
+-- Versión de PHP: 7.4.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -55,16 +55,16 @@ CREATE TABLE `post` (
 --
 
 INSERT INTO `post` (`id_post`, `id_usuario`, `nombre_post`, `descripcion_post`, `tema_categoria`, `cont_likes_post`, `id_resenias`, `enlace_post`, `ubicacion_foto_post`) VALUES
-(1, 1, 'prueba de psot', 'Como se mencionó anteriormente, si no se especifica una clave, se toma el máximo de los índices integer existentes, y la nueva clave será ese valor máximo más 1 (aunque al menos 0). ', '1', 14, '0,1,2,3,4,5,6,7,8,9,10,11', 'http://localhost/TrabajoIngSotf/UniversitySocialNetwork/html/foro.html', NULL),
+(1, 1, 'prueba de psot', 'Como se mencionó anteriormente, si no se especifica una clave, se toma el máximo de los índices integer existentes, y la nueva clave será ese valor máximo más 1 (aunque al menos 0). ', '1', 14, '0,1,2,3,4,5,6,7,8,9,10,11,14', 'http://localhost/TrabajoIngSotf/UniversitySocialNetwork/html/foro.html', NULL),
 (2, 1, 'prueba de post 2', 'Como se mencionó anteriormente, si no se especifica una clave, se toma el máximo de los índices integer existentes, y la nueva clave será ese valor máximo más 1 (aunque al menos 0). ', '1', 5, '12', 'http://localhost/TrabajoIngSotf/UniversitySocialNetwork/html/foro.html', NULL),
 (3, 1, 'prueba de post 2', 'Como se mencionó anteriormente, si no se especifica una clave, se toma el máximo de los índices integer existentes, y la nueva clave será ese valor máximo más 1 (aunque al menos 0). ', '5', 7, NULL, 'http://localhost/TrabajoIngSotf/UniversitySocialNetwork/html/foro.html', NULL),
 (10, 1, 'prueba de post con imagen', 'Día de la Tierra: 10 datos fascinantes sobre nuestro planeta', '1', 0, NULL, 'https://www.bbc.com/mundo/noticias-52369218', '../imgs_posts/imgPost_10.jpeg'),
-(11, 1, 'prueba de post con imagen2', 'Día de la Tierra: 10 datos fascinantes sobre nuestro planeta', '2', 0, NULL, 'https://www.bbc.com/mundo/noticias-52369218', '../imgs_posts/imgPost_11.jpeg'),
+(11, 1, 'prueba de post con imagen2', 'Día de la Tierra: 10 datos fascinantes sobre nuestro planeta', '2', 0, '15', 'https://www.bbc.com/mundo/noticias-52369218', '../imgs_posts/imgPost_11.jpeg'),
 (13, 3, 'Ana Sofia Beltran', 's', '1', 0, NULL, 'www.google.co', '../imgs_posts/imgPost_13.jpeg'),
 (14, 2, 'publicacion3', 'aaaaaa', '2', 0, NULL, 'www.edu.co', '../imgs_posts/imgPost_14.jpeg'),
 (15, 1, '', '', '', 0, NULL, '', NULL),
 (16, 1, '', '', '', 0, NULL, '', NULL),
-(17, 1, '', '', '', 0, NULL, '', NULL);
+(17, 1, '', '', '', 0, '13', '', NULL);
 
 -- --------------------------------------------------------
 
@@ -109,7 +109,10 @@ INSERT INTO `resenias` (`id_resenia`, `id_usuario`, `resenia`, `id_post`) VALUES
 (9, 1, '2', 1),
 (10, 1, '2', 1),
 (11, 1, '2', 1),
-(12, 1, 'Prueba de comentario en el post 2', 2);
+(12, 1, 'Prueba de comentario en el post 2', 2),
+(13, 3, 'nuevo comentario', 17),
+(14, 3, 'añado otro comentario', 1),
+(15, 3, 'corazon de melon', 11);
 
 -- --------------------------------------------------------
 
@@ -253,7 +256,7 @@ ALTER TABLE `reg_pedidos`
 -- AUTO_INCREMENT de la tabla `resenias`
 --
 ALTER TABLE `resenias`
-  MODIFY `id_resenia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_resenia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `temas`
