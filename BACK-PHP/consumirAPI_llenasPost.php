@@ -1,5 +1,5 @@
 <?php
-/*
+
     include '../BACK-PHP/ApiRest.php';
 
     header("Access-control-Allow-Origin: *");
@@ -18,5 +18,5 @@
 
 
 
-    header("HTTP/1.1 400 Bad Request");*/
+    header("HTTP/1.1 400 Bad Request");
 ?>

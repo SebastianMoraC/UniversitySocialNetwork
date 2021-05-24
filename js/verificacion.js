@@ -17,6 +17,7 @@ function verradiovalue(){
                               //arroja="NoExiste"
     if (datos.id_usuario!="NoExiste"){
       guardarusuario(datos.id_usuario)
+      alert("id usuario:"+datos.id_usuario);
     }else{
       alert("usuario o contraseña incorrectos");
     }
