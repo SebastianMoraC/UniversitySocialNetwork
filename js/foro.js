@@ -1,5 +1,6 @@
 function ratio(starPush){
     var usuario = verusuario();
+    var idpublicacion = document.getElementById("identificarpublicacion");
     var starOne = document.getElementById("starOne");
     var starTwo = document.getElementById("starTwo");
     var starThree = document.getElementById("starThree");
@@ -52,9 +53,14 @@ function ratio(starPush){
         default:
             break;
     }
+    alert(" id del usuario ="+usuario+
+    "\n id publicacion: "+idpublicacion.value+
+    "\n cantidad de estrellas: "+cantidad_estrellas);
 
     var parametros={
-      "cantidad_estrellas":cantidad_estrellas
+      "cantidad_estrellas":cantidad_estrellas,
+      "usuario":usuario,
+      "idpublicacion":idpublicacion.value
     }
 
     $.ajax({
@@ -65,5 +71,5 @@ function ratio(starPush){
     }).then(function(data){
       var datos=JSON.parse(data);
     });
-    alert(" id del usuario ="+usuario)
+
 }

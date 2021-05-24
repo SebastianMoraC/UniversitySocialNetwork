@@ -62,7 +62,7 @@ function rellenarpublicaciones(){
               </div>
           </div>
           <div >
-            <input type="text" readonly="readonly" class="form-control" placeholder="id=${datosTemas[i].id_post}" aria-label="Recipient's username" aria-describedby="basic-addon2" id='id_publicacion'>
+            <input value="${datosTemas[i].id_post}" type="hidden" readonly="readonly" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2" id='id_publicacion'>
           </div>
       </div>`
 
@@ -110,13 +110,20 @@ function publicar(){
 
 
 function comentario(){
-  var publicacion = document.getElementById("publicacion");
-  alert(publicacion.value);
+  var id_publicacion=document.getElementById("identificarpublicacion");
+  var comentario_publicacion = document.getElementById("comentariopublicacion");
+  var usuario = verusuario();
 
+  alert(" id del usuario ="+usuario+
+  "\n id publicacion: "+id_publicacion.value+
+  "\n comentario: "+comentario_publicacion.value);
 
   var parametros={
-    "publicacion_comentario":publicacion.value
+    "comentario_publicacion":comentario_publicacion,
+    "usuario":usuario,
+    "idpublicacion":id_publicacion.value
   }
+
 
   $.ajax({
     data: parametros,

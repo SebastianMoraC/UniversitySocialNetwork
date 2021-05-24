@@ -12,6 +12,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script type="text/javascript" src="../js/publicar.js"></script>
+        <script src="../js/foro.js"></script>
     </head>
 
     <body>
@@ -121,6 +122,7 @@
                     <b class="publication_author row">Autor: Isabel Aguirre Martinez</b>
 
                 </div>
+
                 <div class="publication_ratio col-12">
                     <i class="far fa-star fa-2x publication__star" id="starOne" onclick="ratio(this.id);" ></i>
                     <i class="far fa-star fa-2x publication__star" id="starTwo" onclick="ratio(this.id);"></i>
@@ -131,7 +133,7 @@
                 <div class="publication_comments container col-12">
                     <div class="publication_comments_create row">
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Agregue un comentario" aria-label="Recipient's username" aria-describedby="basic-addon2" id='publicacion'>
+                            <input type="text" class="form-control" placeholder="Agregue un comentario" aria-label="Recipient's username" aria-describedby="basic-addon2" id='comentariopublicacion'>
                             <div class="input-group-append">
                                 <button class="btn btn-outline-secondary" type="button" onclick="comentario();">Comentar</button>
                             </div>
@@ -143,8 +145,8 @@
                     </div>
                 </div>
                 <div >
-                  <input type="text" readonly="readonly" class="form-control" placeholder="id=2" aria-label="Recipient's username" aria-describedby="basic-addon2" id='id_publicacion'>
-                </div>
+                  <input value="3" type="hidden" readonly="readonly" class="form-control" aria-label="Recipient's username" aria-describedby="basic-addon2" id='identificarpublicacion'>
+              </div>
             </div>
 
         </div>
