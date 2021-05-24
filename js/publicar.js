@@ -44,18 +44,18 @@ function rellenarpublicaciones() {
 
           </div>
           <div class="publication_ratio col-12">
-              <i class="far fa-star fa-2x publication__star" id="starOne" onclick="ratio(this.id);" ></i>
-              <i class="far fa-star fa-2x publication__star" id="starTwo" onclick="ratio(this.id);"></i>
-              <i class="far fa-star fa-2x publication__star" id="starThree" onclick="ratio(this.id);"></i>
-              <i class="far fa-star fa-2x publication__star" id="starFour" onclick="ratio(this.id);"></i>
-              <i class="far fa-star fa-2x publication__star" id="starFive" onclick="ratio(this.id);"></i>
+              <i class="far fa-star fa-2x publication__star" id="starOne_${datosTemas[i].id_post}" onclick="ratio(this.id,${datosTemas[i].id_post});" ></i>
+              <i class="far fa-star fa-2x publication__star" id="starTwo_${datosTemas[i].id_post}" onclick="ratio(this.id,${datosTemas[i].id_post});"></i>
+              <i class="far fa-star fa-2x publication__star" id="starThree_${datosTemas[i].id_post}" onclick="ratio(this.id,${datosTemas[i].id_post});"></i>
+              <i class="far fa-star fa-2x publication__star" id="starFour_${datosTemas[i].id_post}" onclick="ratio(this.id,${datosTemas[i].id_post});"></i>
+              <i class="far fa-star fa-2x publication__star" id="starFive_${datosTemas[i].id_post}" onclick="ratio(this.id,${datosTemas[i].id_post});"></i>
           </div>
           <div class="publication_comments container col-12">
               <div class="publication_comments_create row">
                   <div class="input-group mb-3">
-                      <input type="text" class="form-control" placeholder="Agregue un comentario" aria-label="Recipient's username" aria-describedby="basic-addon2" id='publicacion'>
+                      <input type="text" class="form-control" placeholder="Agregue un comentario" aria-label="Recipient's username" aria-describedby="basic-addon2" id='comentario_publicacion_${datosTemas[i].id_post}'>
                       <div class="input-group-append">
-                          <button class="btn btn-outline-secondary" type="button" onclick="comentario();">Comentar</button>
+                          <button class="btn btn-outline-secondary" type="button" onclick="comentario(${datosTemas[i].id_post});">Comentar</button>
                       </div>
                   </div>
 
@@ -66,9 +66,9 @@ function rellenarpublicaciones() {
                     <b class="comment__author col-12">Sebastián Mora Carmona</b>
                     <p class="col-12">
                       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa veritatis voluptate dignissimos. Quisquam eos nulla deserunt, voluptatibus aspernatur consectetur exercitationem vitae mollitia atque ad perspiciatis, id quo. Laudantium, quaerat nesciunt!
-                      
+
                     </p>
-                    
+
 
                   </div>
 
@@ -76,7 +76,7 @@ function rellenarpublicaciones() {
               </div>
           </div>
           <div>
-            <input value="${datosTemas[i].id_post}" type="hidden" readonly="readonly" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2" id='id_publicacion'>
+            <input value="${datosTemas[i].id_post}" type="hidden" readonly="readonly" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2" id='id_publicacion_${datosTemas[i].id_post}'>
           </div>
       </div>`
 
@@ -125,17 +125,17 @@ function publicar() {
 }
 
 
-function comentario() {
-  var id_publicacion = document.getElementById("identificarpublicacion");
-  var comentario_publicacion = document.getElementById("comentariopublicacion");
+function comentario(id) {
+  var id_publicacion = document.getElementById("id_publicacion_"+id);
+  var comentario = document.getElementById("comentario_publicacion_"+id);
   var usuario = verusuario();
 
   alert(" id del usuario =" + usuario +
     "\n id publicacion: " + id_publicacion.value +
-    "\n comentario: " + comentario_publicacion.value);
+    "\n comentario: " + comentario.value);
 
   var parametros = {
-    "comentario_publicacion": comentario_publicacion,
+    "comentario_publicacion": comentario.value,
     "usuario": usuario,
     "idpublicacion": id_publicacion.value
   }

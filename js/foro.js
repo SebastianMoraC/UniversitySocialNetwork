@@ -1,15 +1,15 @@
-function ratio(starPush){
+function ratio(starPush,id){
     var usuario = verusuario();
-    var idpublicacion = document.getElementById("identificarpublicacion");
-    var starOne = document.getElementById("starOne");
-    var starTwo = document.getElementById("starTwo");
-    var starThree = document.getElementById("starThree");
-    var starFour = document.getElementById("starFour");
-    var starFive = document.getElementById("starFive");
+    var idpublicacion = document.getElementById("id_publicacion_"+id);
+    var starOne = document.getElementById("starOne_"+id);
+    var starTwo = document.getElementById("starTwo_"+id);
+    var starThree = document.getElementById("starThree_"+id);
+    var starFour = document.getElementById("starFour_"+id);
+    var starFive = document.getElementById("starFive_"+id);
     var cantidad_estrellas='0';
     switch (starPush) {
 
-        case "starOne":
+        case "starOne_"+id:
             starOne.classList.replace("far","fas");
             starTwo.classList.replace("fas","far");
             starThree.classList.replace("fas","far");
@@ -17,7 +17,7 @@ function ratio(starPush){
             starFive.classList.replace("fas","far");
             cantidad_estrellas='1';
             break;
-        case "starTwo":
+        case "starTwo_"+id:
             starOne.classList.replace("far","fas");
             starTwo.classList.replace("far","fas");
             starThree.classList.replace("fas","far");
@@ -25,7 +25,7 @@ function ratio(starPush){
             starFive.classList.replace("fas","far");
             cantidad_estrellas='2';
             break;
-        case "starThree":
+        case "starThree_"+id:
             starOne.classList.replace("far","fas");
             starTwo.classList.replace("far","fas");
             starThree.classList.replace("far","fas");
@@ -34,7 +34,7 @@ function ratio(starPush){
             cantidad_estrellas='3';
             break;
 
-        case "starFour":
+        case "starFour_"+id:
             starOne.classList.replace("far","fas");
             starTwo.classList.replace("far","fas");
             starThree.classList.replace("far","fas");
@@ -42,7 +42,7 @@ function ratio(starPush){
             starFive.classList.replace("fas","far");
             cantidad_estrellas='4';
             break;
-        case "starFive":
+        case "starFive_"+id:
             starOne.classList.replace("far","fas");
             starTwo.classList.replace("far","fas");
             starThree.classList.replace("far","fas");
