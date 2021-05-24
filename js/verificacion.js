@@ -13,9 +13,14 @@ function verradiovalue(){
     method:'POST',
     responseType:'json',
   }).then(function(data){
-    var datos=JSON.parse(data);// si el usuario no existe en la BD, el id_usuario de la variable datos 
+    var datos=JSON.parse(data);// si el usuario no existe en la BD, el id_usuario de la variable datos
                               //arroja="NoExiste"
-    alert("id del usuario ="+datos.id_usuario);// Aca esta el id del usuario logeado!!!!!!!!!!!!!!!!!!
+    if (datos.id_usuario!="NoExiste"){
+      guardarusuario(datos.id_usuario)
+    }else{
+      alert("usuario o contraseña incorrectos");
+    }
+
 
   });
 }

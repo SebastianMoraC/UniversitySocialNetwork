@@ -1,15 +1,8 @@
-var usuario='';
-var contraseña='';
 
-function guardarusuario(usuario,contraseña){
-  usuario=usuario;
-  contraseña=contraseña;
+function guardarusuario(loging){
+  localStorage.setItem("usuario",loging);
 }
 
 function verusuario(){
-  return usuario;
-}
-
-function vercontraseña(){
-  return contraseña;
+  return localStorage.getItem("usuario");
 }
