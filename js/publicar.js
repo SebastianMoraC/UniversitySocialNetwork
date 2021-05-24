@@ -1,6 +1,8 @@
 rellenarpublicaciones();
 
-
+function regresar(){
+  window.location.replace("foro.html");
+}
 
 
 var contImg = "";
@@ -63,12 +65,7 @@ function rellenarpublicaciones() {
               </div>
               <div class="publication_comments__text row">
                 <div class="container comments__comment col-12">
-                  <div class="comments__data row">
-                    <b class="comment__author col-12">Sebastián Mora Carmona</b>
-                    <p class="col-12">
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa veritatis voluptate dignissimos. Quisquam eos nulla deserunt, voluptatibus aspernatur consectetur exercitationem vitae mollitia atque ad perspiciatis, id quo. Laudantium, quaerat nesciunt!
-                    </p>
-
+                  <div class="comments__data row" id="cargar_comentarios_${datosTemas[i].id_post}">
 
                   </div>
 
@@ -95,11 +92,7 @@ function publicar() {
   var opcionSeleccionada = lista.options[indiceSeleccionado];
   var imag = document.getElementById("imagen").files[0];
   var usuario = verusuario();
-  alert('nombre del autor: ' + autor.value + usuario +
-    '\n nombre de la publicacion: ' + nombre.value +
-    '\n enlace: ' + enlace.value +
-    '\n texto: ' + texto.value +
-    '\n opcion: ' + opcionSeleccionada.value);
+
 
   var parametros = {
     "usuario": usuario,
@@ -123,7 +116,7 @@ function publicar() {
     console.log(data);
     var datos = JSON.parse(data);
   });
-
+  window.location.replace("foro.html");
 }
 
 
@@ -132,9 +125,7 @@ function comentario(id) {
   var comentario = document.getElementById("comentario_publicacion_"+id);
   var usuario = verusuario();
 
-  alert(" id del usuario =" + usuario +
-    "\n id publicacion: " + id_publicacion.value +
-    "\n comentario: " + comentario.value);
+
 
   var parametros = {
     "comentario_publicacion": comentario.value,
@@ -151,5 +142,5 @@ function comentario(id) {
     console.log(data);
     var datos = JSON.parse(data);
   });
-
+  window.location.replace("foro.html");
 }

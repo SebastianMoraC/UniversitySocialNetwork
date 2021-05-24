@@ -53,9 +53,7 @@ function ratio(starPush,id){
         default:
             break;
     }
-    alert(" id del usuario ="+usuario+
-    "\n id publicacion: "+idpublicacion.value+
-    "\n cantidad de estrellas: "+cantidad_estrellas);
+
 
     var parametros={
       "cantidad_estrellas":cantidad_estrellas,
@@ -78,17 +76,36 @@ function ratio(starPush,id){
 
 
 function cargarComentarios(){
+  $.ajax({
+    url: '../BACK-PHP/consumirAPI_Foro.php?post',//aqui va a la tabla post y se trae la tabla post
+    method: 'GET',
+    responseType: 'json',
+  }).then(function (data) {
 
+    var datosTemas = JSON.parse(data);
 
-    $.ajax({
-        url:'../BACK-PHP/consumirAPI_Foro.php?reseniasPost= 1'/* remplaza el "1" por la variable con el id de la publicacion que quiere traer sus comentarios*/,
-        method:'GET',
-        responseType:'json',
-      }).then(function(data){
-          
-          var datos=JSON.parse(data);
-          console.log(datos); //Aca estan los comentarios referentes a el id de la publicaon "1"!!!!! 
-      });
+    for (var i = 0; i < Object.keys(datosTemas).length; i++) {
+      $.ajax({
+          url:'../BACK-PHP/consumirAPI_Foro.php?reseniasPost= '+datosTemas[i].id_post/* remplaza el "1" por la variable con el id de la publicacion que quiere traer sus comentarios*/,
+          method:'GET',
+          responseType:'json',
+        }).then(function(data){
+
+            var datos=JSON.parse(data);
+            console.log(datos); //Aca estan los comentarios referentes a el id de la publicaon "1"!!!!!
+            var divpublicaciones =""
+            for (var i = 0; i < Object.keys(datos).length; i++){
+              divpublicaciones= document.getElementById("cargar_comentarios_"+datos[i].id_post);
+              divpublicaciones.innerHTML = divpublicaciones.innerHTML + `
+              <b class="comment__author col-12">${datos[i].id_usuario}</b>
+              <p class="col-12">
+                ${datos[i].resenia}
+              </p>`
+            }
+            return (datos);
+        });
+      }
+    });
 
 }
 cargarComentarios();// ACA LLAMO LA FUNCION PARA CARGAR LOS COMENTRIOS
