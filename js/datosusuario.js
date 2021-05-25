@@ -1,4 +1,3 @@
-
 function guardarusuario(loging){
   localStorage.setItem("usuario",loging);
 }
