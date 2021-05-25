@@ -111,9 +111,6 @@ function publicar() {
     method: 'POST',
     responseType: 'json',
   }).then(function (data) {
-    console.log(data);
-
-    console.log(data);
     var datos = JSON.parse(data);
   });
   window.location.replace("foro.html");

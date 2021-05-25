@@ -7,7 +7,8 @@
         <title>Pedidos</title>
         <!--CSS-->
         <link href="../css/pedidos.css" rel="stylesheet">
-        <link href="../css/bootstrap.css" rel="stylesheet"> 
+        <link href="../css/bootstrap.css" rel="stylesheet">
+        <script src="../js/pedidos.js"></script>
 
     </head>
 
@@ -20,7 +21,7 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-          
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
@@ -42,16 +43,17 @@
                   </div>
                 </li>
               </ul>
-              
+
             </div>
           </nav>
 
 
         <!--END NAVBAR-->
-        
+
         <div class="container pedidos">
             <h1>Historial de Pedidos</h1>
             <div class="pedidos-pedido row">
+              <!--PEDIDOS-->
                 <div class="pedido_information col-8">
                     <h1 class="text-left pedido_tittle">Pedido 1</h1>
                     <label for="dataPedido" class="pedido_data pedido_data__label">Vendedor:</label>
@@ -73,36 +75,15 @@
                     <img src="../Images/empanada.jpg" class="rounded mx-auto d-block pedido_image img-fluid">
                 </div>
             </div>
-            <div class="pedidos-pedido row">
-                <div class="pedido_information col-8">
-                    <h1 class="text-left pedido_tittle">Pedido 2</h1>
-                    <label for="dataPedido" class="pedido_data pedido_data__label">Vendedor:</label>
-                    <p class="pedido_data">Julian Alfonso</p>
-                    <br>
-                    <label for="dataPedido" class="pedido_data pedido_data__label">Precio:</label>
-                    <p class="pedido_data">5.000</p>
-                    <br>
-                    <label for="dataPedido" class="pedido_data pedido_data__label">Categoria:</label>
-                    <p class="pedido_data">Comida</p>
-                    <br>
-                    <label for="dataPedido" class="pedido_data pedido_data__label">Fecha:</label>
-                    <p class="pedido_data">12/02/2021</p>
-                    <br>
-                    <label for="dataPedido" class="pedido_data pedido_data__label">Descripción:</label>
-                    <p class="pedido_data">Ejemplo de Descripción</p>
-                </div>
-                <div class="col-4">
-                    <img src="../Images/empanada.jpg" class="rounded mx-auto d-block pedido_image img-fluid">
-                </div>
-            </div>
+
         </div>
-    
-    
-    
+
+
+
         <!--JS-->
         <script src="../js/jquery.min.js"></script>
 
         <script src="../js/bootstrap.js"></script>
-    </body> 
+    </body>
 
 </html>

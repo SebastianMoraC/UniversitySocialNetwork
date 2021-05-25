@@ -1,6 +1,4 @@
-function comprarProducto() {
 
-}
 
 var conImg = "";
 function Img(){
@@ -47,9 +45,9 @@ function crear_producto(){
     method:'POST',
     responseType:'json',
   }).then(function(data){
-    var datos=JSON.parse(data);// RETORNA EL ID DE LA VENTA QUE SE CREO 
+    var datos=JSON.parse(data);// RETORNA EL ID DE LA VENTA QUE SE CREO
   });
-  
+
 }
 
 
@@ -68,6 +66,7 @@ function rellenarproductos() {
       <div class="row divProductos">
         <div class="col-lg-7 col-sm-12 text-left">
           <h3>${datosProductos[i].titulo_venta}</h3><br>
+          <input value="${datosProductos[i].id_venta}" type="hidden" readonly="readonly" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2" id='id_venta_${datosProductos[i].id_venta}'>
           <b>Nombre vendedor: </b><label>${datosProductos[i].id_usuario}</label><br>
           <b>Precio producto: </b><label>${datosProductos[i].precio_venta}</label><br>
           <b>Descripcion: </b><label>${datosProductos[i].descripcion_venta}</label><br>
@@ -78,7 +77,7 @@ function rellenarproductos() {
           </div>
         <div class="col-lg-7 col-sm-12">
           <!-- Button trigger modal -->
-          <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
+          <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#exampleModalCenter" onclick=llenardatos(${datosProductos[i].id_venta},${datosProductos[i].precio_venta}); >Comprar</button>
           <!--/BUTTON-->
           <!-- Modal -->
           <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
@@ -91,31 +90,9 @@ function rellenarproductos() {
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <div class="modal-body">
-                  <form name="formproducto">
-                    <label class="col-4">Lugar de Envio</label><input type="text"
-                      class="mx-auto inputText col-8" value="" name="tituloventa">
-                    <label class="col-4"> Cantidad</label>
-                    <select class="custom-select custom-select-sm">
-
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="1">4</option>
-                      <option value="2">5</option>
-                      <option value="3">6</option>
-                    </select>
-
-                    <label class="col-12">Precio</label>
-                    <input type="text" class="contact-form__input form-control" value="5.000" disabled>
-
-                  </form>
+                <div class="modal-body" id="formulario_para_comprar">
+                  <!--formulario compra-->
                 </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                  <button type="button" class="btn btn-success" data-dismiss="modal" onclick="comprarProducto();">Comprar</button>
-                </div>
-
               </div>
             </div>
           </div>
@@ -126,4 +103,59 @@ function rellenarproductos() {
     }
   });
 }
+
+function llenardatos(id,valor){
+  var llenar_formulario = document.getElementById("formulario_para_comprar");
+  llenar_formulario.innerHTML=`
+  <form name="formproducto_${id}">
+    <label class="col-4" >Lugar de Envio</label><input type="text"
+      class="mx-auto inputText col-8" value="" id="lugar_envio_pedido_${id}">
+    <label class="col-4"> Cantidad</label>
+    <select class="custom-select custom-select-sm" id="cantidad_pedido_${id}">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+    </select>
+    <label class="col-12">Precio</label>
+    <input type="text" class="contact-form__input form-control" id="valor_pedido_${id}" value="${valor}" disabled>
+  </form>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+    <button type="button" class="btn btn-success"  onclick="comprarProducto(${id});">Comprar</button>
+  </div>
+  `
+}
+
+
+function comprarProducto(id) {
+
+  var lugar_envio_pedido = document.getElementById("lugar_envio_pedido_"+id);
+  var lista = document.getElementById("cantidad_pedido_"+id);
+  var indiceSeleccionado = lista.selectedIndex;
+  var opcionSeleccionada = lista.options[indiceSeleccionado];
+  var precio = document.getElementById("valor_pedido_"+id);
+  alert('valor Total: '+parseFloat(precio.value)*parseFloat(opcionSeleccionada.value))
+  var parametros = {
+    "lugar_envio_pedido": lugar_envio_pedido.value,
+    "cantidad_de_productos": opcionSeleccionada.value,
+    "precio": parseFloat(precio.value)*parseFloat(opcionSeleccionada.value)
+  }
+
+  /*//este ayax seria para enviar el pedido a la base de datos, para registrar el pedido en la BD
+  $.ajax({
+    data: parametros,
+    url: '../BACK-PHP/consumirAPI_Foro.php',
+    method: 'POST',
+    responseType: 'json',
+  }).then(function (data) {
+    var datos = JSON.parse(data);
+  });
+  */
+
+}
+
+
 rellenarproductos();

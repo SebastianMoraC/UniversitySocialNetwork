@@ -1,11 +1,11 @@
 
 body{
   background: url('../Images/UrbanCampus-Jena–Exterior.jpg');
-  background-size: 99%;
+  background-size: cover;
 }
 
 .divContentForm{
- 
+
   border-radius: 16px;
   background: white;
   opacity: 0.8;
@@ -42,6 +42,3 @@ body{
 i{
   margin: 5px;
 }
-
-
-  
