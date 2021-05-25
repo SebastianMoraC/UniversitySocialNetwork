@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-05-2021 a las 00:15:10
--- Versión del servidor: 10.4.19-MariaDB
--- Versión de PHP: 7.4.19
+-- Tiempo de generación: 25-05-2021 a las 18:01:50
+-- Versión del servidor: 10.4.18-MariaDB
+-- Versión de PHP: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,17 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `unipage`
 --
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `categorias_venta`
---
-
-CREATE TABLE `categorias_venta` (
-  `id_categoria` int(11) NOT NULL,
-  `nombre_categoria` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -178,21 +167,23 @@ CREATE TABLE `venta` (
   `id_usuario` int(11) NOT NULL,
   `titulo_venta` varchar(50) NOT NULL,
   `descripcion_venta` varchar(256) NOT NULL,
-  `categoria` varchar(2) NOT NULL,
-  `estadoDispo_venta` varchar(1) NOT NULL,
+  `estadoDispo_venta` varchar(30) DEFAULT NULL,
   `precio_venta` varchar(7) NOT NULL,
-  `ubicacion_foto_venta` varchar(50) NOT NULL
+  `ubicacion_foto_venta` varchar(50) DEFAULT NULL,
+  `ubicacion_vendedor` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `venta`
+--
+
+INSERT INTO `venta` (`id_venta`, `id_usuario`, `titulo_venta`, `descripcion_venta`, `estadoDispo_venta`, `precio_venta`, `ubicacion_foto_venta`, `ubicacion_vendedor`) VALUES
+(1, 2, 'Empanada', 'Carne de ayer', 'D', '5000', '../imgs_product/imgProduct_1.jpeg', 'UTP'),
+(2, 2, 'Planeta De Naruto', 'Planeta de juguete con todos los poderes', 'Disponible', '100000', '../imgs_product/imgProduct_2.jpeg', 'UTP');
 
 --
 -- Índices para tablas volcadas
 --
-
---
--- Indices de la tabla `categorias_venta`
---
-ALTER TABLE `categorias_venta`
-  ADD PRIMARY KEY (`id_categoria`);
 
 --
 -- Indices de la tabla `post`
@@ -235,12 +226,6 @@ ALTER TABLE `venta`
 --
 
 --
--- AUTO_INCREMENT de la tabla `categorias_venta`
---
-ALTER TABLE `categorias_venta`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de la tabla `post`
 --
 ALTER TABLE `post`
@@ -274,7 +259,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `venta`
 --
 ALTER TABLE `venta`
-  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

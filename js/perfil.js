@@ -3,7 +3,7 @@ userInSession = verusuario();
 
 
 $.ajax({
-    url: '../BACK-PHP/consumirAPI_UsuarioDatos.php?usuarios_datos',
+    url: '../BACK-PHP/consumirAPI_Usuario.php?usuarios_datos',
     method: 'GET',
     responseType: 'json',
 }).then(function (data) {

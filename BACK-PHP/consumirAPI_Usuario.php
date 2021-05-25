@@ -18,6 +18,12 @@
                 $resultado=methodGET($query);
                 echo json_encode($resultado->fetch(PDO::FETCH_ASSOC));
                 exit();
+            }elseif(isset($_GET['usuarios_datos'])){
+                header("HTTP/1.1 200 OK");
+                $query="SELECT * FROM  usuario";
+                $resultado=methodGET($query);
+                echo json_encode($resultado->fetchAll());
+                exit();
             }
             
         }

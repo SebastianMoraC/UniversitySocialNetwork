@@ -2,13 +2,13 @@ function comprarProducto() {
 
 }
 
-
+var conImg = "";
 function Img(){
   var reader = new FileReader();
   reader.readAsDataURL(document.getElementById("imagen").files[0]);
   reader.onload=function(e){
     document.getElementById('imagencargada').src = e.target.result;
-    console.log(document.getElementById('imagencargada').src)
+    conImg=document.getElementById('imagencargada').src;
   }
 }
 
@@ -21,44 +21,35 @@ function crear_producto(){
   var ubicacion = document.publicarproducto.ubicacion;
   var estadoventa = document.publicarproducto.estadoventa;
   var imag=document.getElementById("imagen").files[0];
-  var categorias = document.publicarproducto.categoria;
 
-  var categoria = "";
-  var i;
-  for (i = 0; i < categorias.length; i++) {
-    if (categorias[i].checked) {
-      categoria = categoria + categorias[i].value + ",";
-    }
-  }
 
   alert('titulo venta: '+tituloventa.value+
   '\n vendedor: '+vendedor.value+
   '\n precio: '+ precio.value+
   '\n descripcion: '+ descripcion.value+
   '\n ubicacion: '+ubicacion.value+
-  '\n estado venta: '+estadoventa.value+
-  '\n categorias: '+categoria)
+  '\n estado venta: '+estadoventa.value)
 
   var parametros={
+    "usuario":verusuario(),
+    "imgProducto":conImg,
     "tituloventa":tituloventa.value,
     "vendedor":vendedor.value,
     "precio":precio.value,
     "descripcion":descripcion.value,
     "ubicacion":ubicacion.value,
-    "estadoventa":estadoventa.value,
-    "categorias":categoria
+    "estadoventa":estadoventa.value
   }
-  //aca esta el ajax... lo comente porque me estaba sacando error...me imagino q es porque no esta echo aun el php
-/*
+  console.log(parametros);
   $.ajax({
     data: parametros,
-    url:'../BACK-PHP/publicacion.php',
+    url:'../BACK-PHP/consumirAPI_Productos.php',
     method:'POST',
     responseType:'json',
   }).then(function(data){
-    var datos=JSON.parse(data);
+    var datos=JSON.parse(data);// RETORNA EL ID DE LA VENTA QUE SE CREO 
   });
-  */
+  
 }
 
 
@@ -66,21 +57,25 @@ function rellenarproductos() {
 
 
   $.ajax({
-    url: '../BACK-PHP/consumirAPI_Foro.php?post',//esto hay q cambiarlo por la tabla producto
+    url: '../BACK-PHP/consumirAPI_Productos.php?productosAll',//esto hay q cambiarlo por la tabla producto
     method: 'GET',
     responseType: 'json',
   }).then(function (data) {
     var datosProductos = JSON.parse(data);
     var diferentesproductos = document.getElementById("list_productos");
     for (var i = 0; i < Object.keys(datosProductos).length; i++) {
-      diferentesproductos.innerHTML = diferentesproductos.innerHTML + `
+      diferentesproductos.innerHTML =  `
       <div class="row divProductos">
         <div class="col-lg-7 col-sm-12 text-left">
+          <h3>${datosProductos[i].titulo_venta}</h3><br>
           <b>Nombre vendedor: </b><label>${datosProductos[i].id_usuario}</label><br>
           <b>Precio producto: </b><label>${datosProductos[i].precio_venta}</label><br>
           <b>Descripcion: </b><label>${datosProductos[i].descripcion_venta}</label><br>
-          <b>Ubicacion: </b><label>${datosProductos[i].ubicacion_venta}</label>
+          <b>Ubicacion: </b><label>${datosProductos[i].ubicacion_vendedor}</label>
         </div>
+        <div class="col-lg-4 col-sm-12">
+            <img src="${datosProductos[i].ubicacion_foto_venta}" width="250px">
+          </div>
         <div class="col-lg-7 col-sm-12">
           <!-- Button trigger modal -->
           <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
@@ -126,8 +121,9 @@ function rellenarproductos() {
           </div>
           <!--/MODAL-->
         </div>
-      </div>`
+      </div>`+diferentesproductos.innerHTML ;
 
     }
   });
 }
+rellenarproductos();
