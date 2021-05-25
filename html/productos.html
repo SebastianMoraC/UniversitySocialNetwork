@@ -15,6 +15,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../js/producto.js"></script>
 
   <title>Productos</title>
 </head>
@@ -81,12 +82,12 @@
                 <!--Simbolo "X" cierra modal-->
               </div>
               <div class="modal-body centerInput">
-                <form name="formproducto">
+                <form name="publicarproducto">
                   <label class="col-lg-4 col-sm-10"> Foto del Producto</label><input class="col-lg-7 col-sm-12 mx-auto "
                     type="file" id="imagen" onchange="Img()" ;>
-                  <img class="col-8" id="imagencargada" src="../Images/image_not_available.png" />
+                  <img class="col-8" id="imagencargada" src="../Images/image_not_available.png" >
                   <label class="col-lg-4 col-sm-10"> Titulo venta</label><input type="text"
-                    class="col-lg-7 col-sm-12 mx-auto inputText" value="" name="tituloventa">
+                    class="col-lg-7 col-sm-12 mx-auto inputText" value="" name="tituloventa" >
                   <label class="col-lg-4 col-sm-10"> Nombre del vendedor</label><input type="text"
                     class="col-lg-7 col-sm-12 mx-auto inputText" value="" name="vendedor">
                   <label class="col-lg-4 col-sm-10"> Precio del producto</label><input type="text"
@@ -120,130 +121,12 @@
         <!--Modal fin-->
       </div>
       <div id="list_productos" class="text-center mx-auto col-10 divContainer">
-        <div class="row divProductos">
-          <!--PRODUCT 1-->
-          <div class="col-lg-7 col-sm-12 text-left">
-            <b>Nombre vendedor: </b><label>Julian Ospina</label><br>
-            <b>Precio producto: </b><label>$1.000 cop</label><br>
-            <b>Descripcion: </b><label>Empanada con carne de unicornio</label><br>
-            <b>Ubicacion: </b><label>UTP</label>
+        <!--PRODUCT -->
 
-
-          </div>
-          <div class="col-lg-4 col-sm-12">
-            <img src="../Images/empanada.jpg" width="250px">
-          </div>
-          <div class="col-lg-7 col-sm-12">
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
-            <!--/BUTTON-->
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-              aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Comprar Producto</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <form name="formproducto">
-                      <label class="col-4">Lugar de Envio</label><input type="text"
-                        class="mx-auto inputText col-8" value="" name="tituloventa">
-                      <label class="col-4"> Cantidad</label>
-                      <select class="custom-select custom-select-sm">
-                        
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="1">4</option>
-                        <option value="2">5</option>
-                        <option value="3">6</option>
-                      </select>
-                      
-                      <label class="col-12">Precio</label>
-                      <input type="text" class="contact-form__input form-control" value="5.000" disabled>
-                    
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-success" data-dismiss="modal" onclick="comprarProducto();">Comprar</button>
-                  </div>
-                  
-                </div>
-              </div>
-            </div>
-            <!--/MODAL-->
-          </div>
-        </div>
-        <!--/PRODUCT 1-->
-        <!--PRODUCT 2-->
-        <div class="row divProductos">
-          <div class="col-lg-7 col-sm-12 text-left">
-            <b>Nombre vendedor: </b><label>Julian Ospina</label><br>
-            <b>Precio producto: </b><label>$1.000 cop</label><br>
-            <b>Descripcion: </b><label>Empanada con carne de unicornio</label><br>
-            <b>Ubicacion: </b><label>UTP</label>
-
-
-          </div>
-          <div class="col-lg-4 col-sm-12">
-            <img src="../Images/empanada.jpg" width="250px">
-          </div>
-          <div class="col-lg-7 col-sm-12">
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#exampleModalCenter">Comprar</button>
-            <!--/BUTTON-->
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-              aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Comprar Producto</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <form name="formproducto">
-                      <label class="col-4">Lugar de Envio</label><input type="text"
-                        class="mx-auto inputText col-8" value="" name="tituloventa">
-                      <label class="col-4"> Cantidad</label>
-                      <select class="custom-select custom-select-sm">
-                        
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="1">4</option>
-                        <option value="2">5</option>
-                        <option value="3">6</option>
-                      </select>
-                      
-                      <label class="col-12">Precio</label>
-                      <input type="text" class="contact-form__input form-control" value="5.000" disabled>
-                    
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-success" data-dismiss="modal" onclick="comprarProducto();">Comprar</button>
-                  </div>
-                  
-                </div>
-              </div>
-            </div>
-            <!--/MODAL-->
-          </div>
-        </div>
-        <!--/PRODUCT 2-->
       </div>
     </div>
 
-    <script type="text/javascript" src="../js/producto.js"></script>
+
 </body>
 
 </html>
