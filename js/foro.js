@@ -74,7 +74,6 @@ function ratio(starPush,id){
 }
 
 
-
 function cargarComentarios(){
   $.ajax({
     url: '../BACK-PHP/consumirAPI_Foro.php?post',//aqui va a la tabla post y se trae la tabla post
@@ -86,26 +85,37 @@ function cargarComentarios(){
 
     for (var i = 0; i < Object.keys(datosTemas).length; i++) {
       $.ajax({
-          url:'../BACK-PHP/consumirAPI_Foro.php?reseniasPost= '+datosTemas[i].id_post/* remplaza el "1" por la variable con el id de la publicacion que quiere traer sus comentarios*/,
+          url:'../BACK-PHP/consumirAPI_Foro.php?reseniasPost='+datosTemas[i].id_post/* remplaza el "1" por la variable con el id de la publicacion que quiere traer sus comentarios*/,
           method:'GET',
           responseType:'json',
         }).then(function(data){
 
             var datos=JSON.parse(data);
-            console.log(datos); //Aca estan los comentarios referentes a el id de la publicaon "1"!!!!!
             var divpublicaciones =""
-            for (var i = 0; i < Object.keys(datos).length; i++){
-              divpublicaciones= document.getElementById("cargar_comentarios_"+datos[i].id_post);
-              divpublicaciones.innerHTML = divpublicaciones.innerHTML + `
-              <b class="comment__author col-12">${datos[i].id_usuario}</b>
-              <p class="col-12">
-                ${datos[i].resenia}
-              </p>`
-            }
+            
+            datos.forEach(element => {
+                divpublicaciones= document.getElementById("cargar_comentarios_"+element.id_post);
+                $.ajax({
+                  url:'../BACK-PHP/consumirAPI_Usuario.php?id_usuario_nombre='+element.id_usuario,
+                  method:'GET',
+                  responseType:'json',
+                }).then(function(data1){
+                  
+                    var datos2=JSON.parse(data1);
+                    divpublicaciones.innerHTML = divpublicaciones.innerHTML + `
+                    <b class="comment__author col-12">${datos2.nombre_usuario+" "+datos2.apellido_usuario}</b>
+                    <p class="col-12">
+                      ${element.resenia}
+                    </p>`
+                });
+            });
             return (datos);
         });
       }
     });
 
 }
+
+
+
 cargarComentarios();// ACA LLAMO LA FUNCION PARA CARGAR LOS COMENTRIOS

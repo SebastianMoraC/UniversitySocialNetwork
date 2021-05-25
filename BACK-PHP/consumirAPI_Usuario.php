@@ -12,6 +12,12 @@
                 $resultado=methodGET($query);
                 echo json_encode($resultado->fetchAll());
                 exit();
+            }elseif(isset($_GET['id_usuario_nombre'])){
+                header("HTTP/1.1 200 OK");
+                $query="SELECT nombre_usuario, apellido_usuario FROM  usuario WHERE id_usuario='".$_GET['id_usuario_nombre']."'";
+                $resultado=methodGET($query);
+                echo json_encode($resultado->fetch(PDO::FETCH_ASSOC));
+                exit();
             }
             
         }
