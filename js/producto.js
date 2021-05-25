@@ -10,7 +10,9 @@ function Img(){
   }
 }
 
-
+function regresar(){
+  window.location.replace("productos.html");
+}
 function crear_producto(){
   var tituloventa = document.publicarproducto.tituloventa;
   var vendedor = document.publicarproducto.vendedor;
@@ -20,13 +22,6 @@ function crear_producto(){
   var estadoventa = document.publicarproducto.estadoventa;
   var imag=document.getElementById("imagen").files[0];
 
-
-  alert('titulo venta: '+tituloventa.value+
-  '\n vendedor: '+vendedor.value+
-  '\n precio: '+ precio.value+
-  '\n descripcion: '+ descripcion.value+
-  '\n ubicacion: '+ubicacion.value+
-  '\n estado venta: '+estadoventa.value)
 
   var parametros={
     "usuario":verusuario(),
@@ -47,7 +42,7 @@ function crear_producto(){
   }).then(function(data){
     var datos=JSON.parse(data);// RETORNA EL ID DE LA VENTA QUE SE CREO
   });
-
+  window.location.replace("productos.html");
 }
 
 
@@ -66,7 +61,8 @@ function rellenarproductos() {
       <div class="row divProductos">
         <div class="col-lg-7 col-sm-12 text-left">
           <h3>${datosProductos[i].titulo_venta}</h3><br>
-          <input value="${datosProductos[i].id_venta}" type="hidden" readonly="readonly" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2" id='id_venta_${datosProductos[i].id_venta}'>
+          <input value='${datosProductos[i].titulo_venta}' type="hidden" readonly="readonly"  id='titulo_venta_${datosProductos[i].id_venta}'>
+          <input value="${datosProductos[i].id_venta}" type="hidden" readonly="readonly"  id='id_venta_${datosProductos[i].id_venta}'>
           <b>Nombre vendedor: </b><label>${datosProductos[i].id_usuario}</label><br>
           <b>Precio producto: </b><label>${datosProductos[i].precio_venta}</label><br>
           <b>Descripcion: </b><label>${datosProductos[i].descripcion_venta}</label><br>
@@ -131,16 +127,28 @@ function llenardatos(id,valor){
 
 
 function comprarProducto(id) {
-
+  var titulo_venta =document.getElementById("titulo_venta_"+id);
   var lugar_envio_pedido = document.getElementById("lugar_envio_pedido_"+id);
   var lista = document.getElementById("cantidad_pedido_"+id);
   var indiceSeleccionado = lista.selectedIndex;
   var opcionSeleccionada = lista.options[indiceSeleccionado];
   var precio = document.getElementById("valor_pedido_"+id);
-  alert('valor Total: '+parseFloat(precio.value)*parseFloat(opcionSeleccionada.value))
+  var usuario = verusuario();
+  var idventa =id;
+  var f = new Date();
+  var fecha= f.getFullYear()+ "/"+ (f.getMonth() +1) + "/" +f.getDate()  ;
+  alert('titulo venta: '+titulo_venta.value+
+  '\n id usuario: '+usuario+
+  '\n id venta: '+id+
+  '\n cantidad pedido: '+opcionSeleccionada.value+
+  '\n fecha venta: '+fecha+
+  '\n valor Total '+parseFloat(precio.value)*parseFloat(opcionSeleccionada.value))
   var parametros = {
+    "usuario":usuario,
+    "id_venta":id,
     "lugar_envio_pedido": lugar_envio_pedido.value,
     "cantidad_de_productos": opcionSeleccionada.value,
+    "fecha":fecha,
     "precio": parseFloat(precio.value)*parseFloat(opcionSeleccionada.value)
   }
 
