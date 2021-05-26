@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-05-2021 a las 19:56:35
--- Versión del servidor: 10.4.18-MariaDB
--- Versión de PHP: 8.0.3
+-- Tiempo de generación: 26-05-2021 a las 20:18:21
+-- Versión del servidor: 10.4.19-MariaDB
+-- Versión de PHP: 7.4.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -38,6 +38,16 @@ CREATE TABLE `post` (
   `enlace_post` varchar(300) NOT NULL,
   `ubicacion_foto_post` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `post`
+--
+
+INSERT INTO `post` (`id_post`, `id_usuario`, `nombre_post`, `descripcion_post`, `tema_categoria`, `cont_likes_post`, `id_resenias`, `enlace_post`, `ubicacion_foto_post`) VALUES
+(1, 3, 'primera publicacion ', 'Material para la u, pagina para investigar y trabajar', '1', 0, NULL, 'www.google.co', '../imgs_posts/imgPost_1.jpeg'),
+(2, 3, 'publicacion 2', 'arte para personas creativas', '1', 0, NULL, 'no hay', '../imgs_posts/imgPost_2.jpeg'),
+(3, 3, 'Ayudas en materias como fisica', 'ayuda para aquellas personas que quieran explorar el espacio', '2', 0, NULL, 'https://es.wikipedia.org/wiki/Astrof%C3%ADsica', '../imgs_posts/imgPost_3.jpeg'),
+(4, 3, '¿por q nos estan matando?', 'contexto social y cultural del area de Pereira', '2', 0, NULL, 'https://repository.usta.edu.co/handle/11634/22890?show=full', '../imgs_posts/imgPost_4.jpeg');
 
 -- --------------------------------------------------------
 
@@ -225,7 +235,7 @@ ALTER TABLE `venta`
 -- AUTO_INCREMENT de la tabla `post`
 --
 ALTER TABLE `post`
-  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `reg_pedidos`
