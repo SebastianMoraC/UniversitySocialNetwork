@@ -32,7 +32,7 @@ function rellenarpublicaciones() {
     var datosTemas = JSON.parse(data);
     var divpublicaciones = document.getElementById("publicaciones");
     for (var i = 0; i < Object.keys(datosTemas).length; i++) {
-      divpublicaciones.innerHTML = divpublicaciones.innerHTML + `
+      divpublicaciones.innerHTML = `
       <div class="publication row">
           <div class="container col-12">
               <div class="row">
@@ -81,7 +81,7 @@ function rellenarpublicaciones() {
           <div>
             <input value="${datosTemas[i].id_post}" type="hidden" readonly="readonly" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2" id='id_publicacion_${datosTemas[i].id_post}'>
           </div>
-      </div>`
+      </div>`+divpublicaciones.innerHTML;
 
     }
   });
@@ -148,7 +148,7 @@ function activateIA() {
       var divpublicaciones = document.getElementById("publicaciones");
       for (var i = 0; i < Object.keys(publicationsToShow).length; i++) {
         console.log("hello")
-        divpublicaciones.innerHTML = divpublicaciones.innerHTML + `
+        divpublicaciones.innerHTML = `
       <div class="publication row">
           <div class="container col-12">
               <div class="row">
@@ -197,7 +197,7 @@ function activateIA() {
           <div>
             <input value="${publicationsToShow[i].id_post}" type="hidden" readonly="readonly" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2" id='id_publicacion_${publicationsToShow[i].id_post}'>
           </div>
-      </div>`
+      </div>`+divpublicaciones.innerHTML;
       }
   });
   });
