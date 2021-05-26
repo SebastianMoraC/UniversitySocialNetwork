@@ -120,4 +120,4 @@ function cargarComentarios(){
 
 
 
-cargarComentarios();// ACA LLAMO LA FUNCION PARA CARGAR LOS COMENTRIOS
+// ACA LLAMO LA FUNCION PARA CARGAR LOS COMENTRIOS
