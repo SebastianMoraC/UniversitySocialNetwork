@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-05-2021 a las 02:42:22
--- Versión del servidor: 10.4.18-MariaDB
--- Versión de PHP: 8.0.3
+-- Tiempo de generación: 26-05-2021 a las 03:16:38
+-- Versión del servidor: 10.4.19-MariaDB
+-- Versión de PHP: 7.4.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -44,16 +44,9 @@ CREATE TABLE `post` (
 --
 
 INSERT INTO `post` (`id_post`, `id_usuario`, `nombre_post`, `descripcion_post`, `tema_categoria`, `cont_likes_post`, `id_resenias`, `enlace_post`, `ubicacion_foto_post`) VALUES
-(1, 1, 'prueba de psot', 'Como se mencionó anteriormente, si no se especifica una clave, se toma el máximo de los índices integer existentes, y la nueva clave será ese valor máximo más 1 (aunque al menos 0). ', '1', 14, '0,1,2,3,4,5,6,7,8,9,10,11,14', 'http://localhost/TrabajoIngSotf/UniversitySocialNetwork/html/foro.html', NULL),
-(2, 1, 'prueba de post 2', 'Como se mencionó anteriormente, si no se especifica una clave, se toma el máximo de los índices integer existentes, y la nueva clave será ese valor máximo más 1 (aunque al menos 0). ', '1', 5, '12', 'http://localhost/TrabajoIngSotf/UniversitySocialNetwork/html/foro.html', NULL),
-(3, 1, 'prueba de post 2', 'Como se mencionó anteriormente, si no se especifica una clave, se toma el máximo de los índices integer existentes, y la nueva clave será ese valor máximo más 1 (aunque al menos 0). ', '5', 7, NULL, 'http://localhost/TrabajoIngSotf/UniversitySocialNetwork/html/foro.html', NULL),
-(10, 1, 'prueba de post con imagen', 'Día de la Tierra: 10 datos fascinantes sobre nuestro planeta', '1', 0, NULL, 'https://www.bbc.com/mundo/noticias-52369218', '../imgs_posts/imgPost_10.jpeg'),
-(11, 1, 'prueba de post con imagen2', 'Día de la Tierra: 10 datos fascinantes sobre nuestro planeta', '2', 0, '15', 'https://www.bbc.com/mundo/noticias-52369218', '../imgs_posts/imgPost_11.jpeg'),
-(13, 3, 'Ana Sofia Beltran', 's', '1', 0, NULL, 'www.google.co', '../imgs_posts/imgPost_13.jpeg'),
-(14, 2, 'publicacion3', 'aaaaaa', '2', 0, NULL, 'www.edu.co', '../imgs_posts/imgPost_14.jpeg'),
-(15, 1, '', '', '', 0, NULL, '', NULL),
-(16, 1, '', '', '', 0, NULL, '', NULL),
-(17, 1, '', '', '', 0, '13', '', NULL);
+(18, 3, 'soporte whatsapp', 'ayudo a gente con problemas con el whatsapp', '3', 0, NULL, 'http://www.google.com.co/', '../imgs_posts/imgPost_18.jpeg'),
+(19, 3, 'asesoria matematicas', 'julio profe y yo ayudamos', '1', 0, NULL, 'https://youtu.be/eTvPWCLdGlo', '../imgs_posts/imgPost_19.jpeg'),
+(20, 3, 'ciencia maestra', 'proyectos de tesis gratis!!!', '5', 0, NULL, 'no hay', '../imgs_posts/imgPost_20.jpeg');
 
 -- --------------------------------------------------------
 
@@ -78,7 +71,10 @@ CREATE TABLE `reg_pedidos` (
 INSERT INTO `reg_pedidos` (`id_pedido`, `id_venta`, `comprador_id_usuario`, `cantidad_pedido`, `lugar_envio_pedido`, `fecha_pedido`, `valor_Total`) VALUES
 (1, 2, '2', '4', '', '2021-05-25', '400000'),
 (2, 1, '2', '2', 'UTP 2', '2021-05-25', '10000'),
-(3, 2, '2', '3', 'UTP 2', '2021-05-25', '300000');
+(3, 2, '2', '3', 'UTP 2', '2021-05-25', '300000'),
+(4, 1, '3', '3', 'mi casa', '2021-05-25', '15000'),
+(5, 2, '3', '6', 'utp', '2021-05-25', '600000'),
+(6, 3, '3', '1', 'mi casa', '2021-05-25', '2000');
 
 -- --------------------------------------------------------
 
@@ -190,7 +186,8 @@ CREATE TABLE `venta` (
 
 INSERT INTO `venta` (`id_venta`, `id_usuario`, `titulo_venta`, `descripcion_venta`, `estadoDispo_venta`, `precio_venta`, `ubicacion_foto_venta`, `ubicacion_vendedor`) VALUES
 (1, 2, 'Empanada', 'Carne de ayer', 'D', '5000', '../imgs_product/imgProduct_1.jpeg', 'UTP'),
-(2, 2, 'Planeta De Naruto', 'Planeta de juguete con todos los poderes', 'Disponible', '100000', '../imgs_product/imgProduct_2.jpeg', 'UTP');
+(2, 2, 'Planeta De Naruto', 'Planeta de juguete con todos los poderes', 'Disponible', '100000', '../imgs_product/imgProduct_2.jpeg', 'UTP'),
+(3, 3, 'flores', 'muy hermosas flores para regalar', 'disponible', '2000', '../imgs_product/imgProduct_3.jpeg', 'mi casa');
 
 --
 -- Índices para tablas volcadas
@@ -240,13 +237,13 @@ ALTER TABLE `venta`
 -- AUTO_INCREMENT de la tabla `post`
 --
 ALTER TABLE `post`
-  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `reg_pedidos`
 --
 ALTER TABLE `reg_pedidos`
-  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `resenias`
@@ -270,7 +267,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `venta`
 --
 ALTER TABLE `venta`
-  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_venta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
