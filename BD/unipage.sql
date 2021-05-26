@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-05-2021 a las 16:53:07
+-- Tiempo de generación: 26-05-2021 a las 19:00:52
 -- Versión del servidor: 10.4.18-MariaDB
 -- Versión de PHP: 8.0.3
 
@@ -75,6 +75,26 @@ INSERT INTO `reg_pedidos` (`id_pedido`, `id_venta`, `comprador_id_usuario`, `can
 (4, 1, '3', '3', 'mi casa', '2021-05-25', '15000'),
 (5, 2, '3', '6', 'utp', '2021-05-25', '600000'),
 (6, 3, '3', '1', 'mi casa', '2021-05-25', '2000');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `reporte`
+--
+
+CREATE TABLE `reporte` (
+  `id_reporte` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `id_post` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `reporte`
+--
+
+INSERT INTO `reporte` (`id_reporte`, `id_usuario`, `id_post`) VALUES
+(1, 2, 18),
+(2, 2, 20);
 
 -- --------------------------------------------------------
 
@@ -194,6 +214,12 @@ ALTER TABLE `reg_pedidos`
   ADD PRIMARY KEY (`id_pedido`);
 
 --
+-- Indices de la tabla `reporte`
+--
+ALTER TABLE `reporte`
+  ADD PRIMARY KEY (`id_reporte`);
+
+--
 -- Indices de la tabla `resenias`
 --
 ALTER TABLE `resenias`
@@ -234,10 +260,16 @@ ALTER TABLE `reg_pedidos`
   MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT de la tabla `reporte`
+--
+ALTER TABLE `reporte`
+  MODIFY `id_reporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT de la tabla `resenias`
 --
 ALTER TABLE `resenias`
-  MODIFY `id_resenia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_resenia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `temas`

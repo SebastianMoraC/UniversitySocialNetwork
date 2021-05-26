@@ -36,7 +36,8 @@ function rellenarpublicaciones() {
       <div class="publication row">
           <div class="container col-12">
               <div class="row">
-                  <h2 class="publication_name col-8">${datosTemas[i].nombre_post}</h1>
+                  <h2 class="publication_name col-11">${datosTemas[i].nombre_post}</h1>
+                  <button type="button" class="btn mx-auto" onclick="reportarPost(${datosTemas[i].id_post})"><i class="fas fa-exclamation-triangle" style="color:red"></i></button>
                   <a class="col-2 publication_date" href="${datosTemas[i].enlace_post}" target="_blank">Enlace Asociado</a>
               </div>
               <div class="row">
@@ -87,6 +88,26 @@ function rellenarpublicaciones() {
   cargarComentarios();
 }
 
+function reportarPost(id){
+  var parametros = {
+    "usuario": verusuario(),
+    "id_post_repotar": id
+  }
+  $.ajax({
+    data: parametros,
+    url: '../BACK-PHP/consumirAPI_Foro.php',
+    method: 'POST',
+    responseType: 'json',
+  }).then(function (data) {
+    console.log(data);
+    var datos=JSON.parse(data);
+    alert("Hemos recibido su Reporte con id= "+datos.id_reporte);
+  });
+
+
+
+}
+
 function activateIA() {
   userInSession = verusuario();
   var divdelete = document.getElementById("publicaciones");
@@ -132,6 +153,7 @@ function activateIA() {
           <div class="container col-12">
               <div class="row">
                   <h2 class="publication_name col-8">${publicationsToShow[i].nombre_post}</h1>
+                  <button type="button" class="btn mx-auto col-1" onclick="reportarPost(${publicationsToShow[i].id_post})"><i class="fas fa-exclamation-triangle" style="color:red"></i></button>
                   <a class="col-2 publication_date" href="${publicationsToShow[i].enlace_post}" target="_blank">Enlace Asociado</a>
               </div>
               <div class="row">

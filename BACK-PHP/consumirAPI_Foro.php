@@ -30,7 +30,7 @@ include '../BACK-PHP/ApiRest.php';
             echo json_encode($resultado->fetch(PDO::FETCH_ASSOC));
             exit();
         }elseif(isset($_POST["cantidad_estrellas"])){
-
+            header("HTTP/1.1 200 OK");
             $query="SELECT cont_likes_post FROM post WHERE id_post='".$_POST["idpublicacion"]."'";
             $canridad_likes=methodGET($query)->fetch(PDO::FETCH_ASSOC);
             $nuevoCont=intval($canridad_likes["cont_likes_post"])+intval($_POST["cantidad_estrellas"]);
@@ -39,6 +39,14 @@ include '../BACK-PHP/ApiRest.php';
             $resultado=methodPUT($query);
             echo json_encode($resultado->fetch(PDO::FETCH_ASSOC));
             exit();
+        }elseif(isset($_POST["id_post_repotar"])){
+            header("HTTP/1.1 200 OK");
+            $query="INSERT INTO reporte  (id_post,id_usuario) VALUES ('".$_POST["id_post_repotar"]."','".$_POST["usuario"]."')";
+            $id_resenia="SELECT MAX(id_reporte) AS id_reporte FROM reporte WHERE id_post = '".$_POST["id_post_repotar"]."' AND id_usuario='".$_POST["usuario"]."'";
+            $resultado=methodPOST($query, $id_resenia)->fetch(PDO::FETCH_ASSOC);
+            echo json_encode($resultado);
+            exit();
+
         }else{
 
             header("HTTP/1.1 200 OK");
