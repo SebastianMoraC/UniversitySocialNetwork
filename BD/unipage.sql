@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-05-2021 a las 20:18:21
+-- Tiempo de generación: 26-05-2021 a las 21:31:12
 -- Versión del servidor: 10.4.19-MariaDB
--- Versión de PHP: 7.4.19
+-- Versión de PHP: 8.0.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -44,10 +44,8 @@ CREATE TABLE `post` (
 --
 
 INSERT INTO `post` (`id_post`, `id_usuario`, `nombre_post`, `descripcion_post`, `tema_categoria`, `cont_likes_post`, `id_resenias`, `enlace_post`, `ubicacion_foto_post`) VALUES
-(1, 3, 'primera publicacion ', 'Material para la u, pagina para investigar y trabajar', '1', 0, NULL, 'www.google.co', '../imgs_posts/imgPost_1.jpeg'),
-(2, 3, 'publicacion 2', 'arte para personas creativas', '1', 0, NULL, 'no hay', '../imgs_posts/imgPost_2.jpeg'),
-(3, 3, 'Ayudas en materias como fisica', 'ayuda para aquellas personas que quieran explorar el espacio', '2', 0, NULL, 'https://es.wikipedia.org/wiki/Astrof%C3%ADsica', '../imgs_posts/imgPost_3.jpeg'),
-(4, 3, '¿por q nos estan matando?', 'contexto social y cultural del area de Pereira', '2', 0, NULL, 'https://repository.usta.edu.co/handle/11634/22890?show=full', '../imgs_posts/imgPost_4.jpeg');
+(5, 2, 'La comida Italiana', 'Entre los platos mÃ¡s famosos de la pasta, estÃ¡ la lasagna, los raviolis, el espagueti, los tallarines preparados con mariscos, carne y verduras, sazonados con salsas como la boloÃ±esa, carbonara, napolitana y puttanesca.', '5', 3, '1', 'https://www.aviatur.com/blog/gastronomia/tour-gastronomico-por-roma#:~:text=Entre%20los%20platos%20m%C3%A1s%20famosos,%2C%20carbonara%2C%20napolitana%20y%20puttanesca.', '../imgs_posts/imgPost_5.jpeg'),
+(6, 2, 'La comida EspaÃ±ola', 'La gastronomÃ­a o cocina espaÃ±ola son los platos, ingredientes, tÃ©cnicas y toda la tradiciÃ³n culinaria que se practica en EspaÃ±a. Cocina de origen que oscila entre el estilo rural y el costero, representa una diversidad fruto de muchas culturas, asÃ­ c', '5', 4, '2', 'https://es.wikipedia.org/wiki/Gastronom%C3%ADa_de_Espa%C3%B1a', '../imgs_posts/imgPost_6.jpeg');
 
 -- --------------------------------------------------------
 
@@ -102,6 +100,14 @@ CREATE TABLE `resenias` (
   `id_post` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `resenias`
+--
+
+INSERT INTO `resenias` (`id_resenia`, `id_usuario`, `resenia`, `id_post`) VALUES
+(1, 2, 'Rica!', 5),
+(2, 2, 'Muy buena!', 6);
+
 -- --------------------------------------------------------
 
 --
@@ -153,7 +159,8 @@ CREATE TABLE `usuario` (
 INSERT INTO `usuario` (`id_usuario`, `nombre_usuario`, `apellido_usuario`, `correo_usuario`, `password_usuario`, `id_tema_interes_usuario`, `tipo_usuario`, `ubicacion_foto_usuario`, `universidad_usuario`) VALUES
 (1, 'Jhon ', 'Parra', 'j.prueba@utp.edu.co', '123', '1,', '1', NULL, 'qwe'),
 (2, 'Jhon ', 'Parra', 'j.prueba2@utp.edu.co', '123', '1,2', '2', NULL, 'qwe'),
-(3, 'Ana Sofia', 'Beltran Rios', 'anasofia.beltran@utp.edu.co', '12345', '1', '2', NULL, 'UTP');
+(3, 'Ana Sofia', 'Beltran Rios', 'anasofia.beltran@utp.edu.co', '12345', '1', '2', NULL, 'UTP'),
+(4, 'Sebastian', 'Mora Carmona', 'sebastian.mora@utp.edu.co', '12345', '8,9', '2', NULL, 'UTP');
 
 -- --------------------------------------------------------
 
@@ -235,7 +242,7 @@ ALTER TABLE `venta`
 -- AUTO_INCREMENT de la tabla `post`
 --
 ALTER TABLE `post`
-  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `reg_pedidos`
@@ -253,7 +260,7 @@ ALTER TABLE `reporte`
 -- AUTO_INCREMENT de la tabla `resenias`
 --
 ALTER TABLE `resenias`
-  MODIFY `id_resenia` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_resenia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `temas`
@@ -265,7 +272,7 @@ ALTER TABLE `temas`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_usuario` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `venta`
