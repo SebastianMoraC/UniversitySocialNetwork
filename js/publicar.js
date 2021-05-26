@@ -28,7 +28,7 @@ function rellenarpublicaciones() {
   }).then(function (data) {
 
     var datosTemas = JSON.parse(data);
-
+    cargarComentarios();
     var divpublicaciones = document.getElementById("publicaciones");
     for (var i = 0; i < Object.keys(datosTemas).length; i++) {
       divpublicaciones.innerHTML = divpublicaciones.innerHTML + `
@@ -119,6 +119,7 @@ function activateIA() {
           }
         }
       }
+      cargarComentarios();
       var divpublicaciones = document.getElementById("publicaciones");
       for (var i = 0; i < Object.keys(publicationsToShow).length; i++) {
         console.log("hello")
