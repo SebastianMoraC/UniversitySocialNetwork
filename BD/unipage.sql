@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-05-2021 a las 22:36:44
+-- Tiempo de generación: 26-05-2021 a las 22:38:13
 -- Versión del servidor: 10.4.18-MariaDB
 -- Versión de PHP: 8.0.3
 
@@ -169,8 +169,8 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`id_usuario`, `nombre_usuario`, `apellido_usuario`, `correo_usuario`, `password_usuario`, `id_tema_interes_usuario`, `tipo_usuario`, `ubicacion_foto_usuario`, `universidad_usuario`) VALUES
 (1, 'Jhon ', 'Parra', 'j.prueba@utp.edu.co', '123', '1,4,5', '1', NULL, 'qwe'),
-(2, 'Jhon ', 'Parra', 'j.prueba2@utp.edu.co', '123', '1,2,6,7', '2', NULL, 'qwe'),
-(3, 'Ana Sofia', 'Beltran Rios', 'anasofia.beltran@utp.edu.co', '12345', '1,4,7', '2', NULL, 'UTP'),
+(2, 'Jhon ', 'Parra', 'j.prueba2@utp.edu.co', '123', '1,2,3,6,7', '2', NULL, 'qwe'),
+(3, 'Ana Sofia', 'Beltran Rios', 'anasofia.beltran@utp.edu.co', '12345', '1,3,4,7', '2', NULL, 'UTP'),
 (4, 'Sebastian', 'Mora Carmona', 'sebastian.mora@utp.edu.co', '12345', '8,9', '2', NULL, 'UTP');
 
 -- --------------------------------------------------------
