@@ -1,3 +1,4 @@
+window.onload = function(){showGeneral()};
 function ratio(starPush,id){
     var usuario = verusuario();
     var idpublicacion = document.getElementById("id_publicacion_"+id);
@@ -67,7 +68,7 @@ function ratio(starPush,id){
       method:'POST',
       responseType:'json',
     }).then(function(data){
-        console.log(data);
+
       var datos=JSON.parse(data);
     });
 
@@ -75,6 +76,7 @@ function ratio(starPush,id){
 
 
 function cargarComentarios(){
+  
   $.ajax({
     url: '../BACK-PHP/consumirAPI_Foro.php?post',//aqui va a la tabla post y se trae la tabla post
     method: 'GET',

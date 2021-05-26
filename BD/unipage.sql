@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-05-2021 a las 03:16:38
--- Versión del servidor: 10.4.19-MariaDB
--- Versión de PHP: 7.4.19
+-- Tiempo de generación: 26-05-2021 a las 16:53:07
+-- Versión del servidor: 10.4.18-MariaDB
+-- Versión de PHP: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -44,9 +44,9 @@ CREATE TABLE `post` (
 --
 
 INSERT INTO `post` (`id_post`, `id_usuario`, `nombre_post`, `descripcion_post`, `tema_categoria`, `cont_likes_post`, `id_resenias`, `enlace_post`, `ubicacion_foto_post`) VALUES
-(18, 3, 'soporte whatsapp', 'ayudo a gente con problemas con el whatsapp', '3', 0, NULL, 'http://www.google.com.co/', '../imgs_posts/imgPost_18.jpeg'),
-(19, 3, 'asesoria matematicas', 'julio profe y yo ayudamos', '1', 0, NULL, 'https://youtu.be/eTvPWCLdGlo', '../imgs_posts/imgPost_19.jpeg'),
-(20, 3, 'ciencia maestra', 'proyectos de tesis gratis!!!', '5', 0, NULL, 'no hay', '../imgs_posts/imgPost_20.jpeg');
+(18, 3, 'soporte whatsapp', 'ayudo a gente con problemas con el whatsapp', '3', 0, '16,1', 'http://www.google.com.co/', '../imgs_posts/imgPost_18.jpeg'),
+(19, 3, 'asesoria matematicas', 'julio profe y yo ayudamos', '1', 0, '2', 'https://youtu.be/eTvPWCLdGlo', '../imgs_posts/imgPost_19.jpeg'),
+(20, 3, 'ciencia maestra', 'proyectos de tesis gratis!!!', '5', 0, '3', 'no hay', '../imgs_posts/imgPost_20.jpeg');
 
 -- --------------------------------------------------------
 
@@ -94,21 +94,9 @@ CREATE TABLE `resenias` (
 --
 
 INSERT INTO `resenias` (`id_resenia`, `id_usuario`, `resenia`, `id_post`) VALUES
-(1, 1, '1', 1),
-(2, 1, 'prueba comentario 1', 1),
-(3, 1, 'prueba comentario 1', 1),
-(4, 1, 'prueba comentario 1', 1),
-(5, 1, 'prueba comentario 1', 1),
-(6, 1, 'prueba comentario 1', 1),
-(7, 1, 'prueba comentario 1', 1),
-(8, 1, '1', 1),
-(9, 1, '2', 1),
-(10, 1, '2', 1),
-(11, 1, '2', 1),
-(12, 1, 'Prueba de comentario en el post 2', 2),
-(13, 3, 'nuevo comentario', 17),
-(14, 3, 'añado otro comentario', 1),
-(15, 3, 'corazon de melon', 11);
+(1, 2, 'Es mejor Telegram :p', 18),
+(2, 2, 'Pase todas las mates con ese señor :v', 19),
+(3, 2, 'No sirve el enlace', 20);
 
 -- --------------------------------------------------------
 
@@ -249,7 +237,7 @@ ALTER TABLE `reg_pedidos`
 -- AUTO_INCREMENT de la tabla `resenias`
 --
 ALTER TABLE `resenias`
-  MODIFY `id_resenia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_resenia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `temas`

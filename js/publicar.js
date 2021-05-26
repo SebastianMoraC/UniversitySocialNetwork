@@ -1,3 +1,4 @@
+
 function showGeneral(){
   rellenarpublicaciones();
 }
@@ -21,6 +22,7 @@ function Img() {
 
 
 function rellenarpublicaciones() {
+  document.getElementById("publicaciones").innerHTML="";
   $.ajax({
     url: '../BACK-PHP/consumirAPI_Foro.php?post',
     method: 'GET',
@@ -28,7 +30,6 @@ function rellenarpublicaciones() {
   }).then(function (data) {
 
     var datosTemas = JSON.parse(data);
-    cargarComentarios();
     var divpublicaciones = document.getElementById("publicaciones");
     for (var i = 0; i < Object.keys(datosTemas).length; i++) {
       divpublicaciones.innerHTML = divpublicaciones.innerHTML + `
@@ -36,7 +37,7 @@ function rellenarpublicaciones() {
           <div class="container col-12">
               <div class="row">
                   <h2 class="publication_name col-8">${datosTemas[i].nombre_post}</h1>
-                  <a class="col-2 publication_date" href="${datosTemas[i].enlace_post}">Enlace Asociado</a>
+                  <a class="col-2 publication_date" href="${datosTemas[i].enlace_post}" target="_blank">Enlace Asociado</a>
               </div>
               <div class="row">
               <b class="publication_category column">Categoria: ${datosTemas[i].tema_categoria}</b>
@@ -83,11 +84,14 @@ function rellenarpublicaciones() {
 
     }
   });
+  cargarComentarios();
 }
 
 function activateIA() {
   userInSession = verusuario();
   var divdelete = document.getElementById("publicaciones");
+  document.getElementById("publicaciones").innerHTML="";
+
 
 
   
@@ -119,7 +123,7 @@ function activateIA() {
           }
         }
       }
-      cargarComentarios();
+      
       var divpublicaciones = document.getElementById("publicaciones");
       for (var i = 0; i < Object.keys(publicationsToShow).length; i++) {
         console.log("hello")
@@ -128,7 +132,7 @@ function activateIA() {
           <div class="container col-12">
               <div class="row">
                   <h2 class="publication_name col-8">${publicationsToShow[i].nombre_post}</h1>
-                  <a class="col-2 publication_date" href="${publicationsToShow[i].enlace_post}">Enlace Asociado</a>
+                  <a class="col-2 publication_date" href="${publicationsToShow[i].enlace_post}" target="_blank">Enlace Asociado</a>
               </div>
               <div class="row">
               <b class="publication_category column">Categoria: ${publicationsToShow[i].tema_categoria}</b>
@@ -175,7 +179,7 @@ function activateIA() {
       }
   });
   });
-
+  cargarComentarios();
 }
 
 
