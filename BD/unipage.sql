@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-05-2021 a las 21:31:12
+-- Tiempo de generación: 26-05-2021 a las 21:48:41
 -- Versión del servidor: 10.4.19-MariaDB
--- Versión de PHP: 8.0.6
+-- Versión de PHP: 7.4.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -44,8 +44,12 @@ CREATE TABLE `post` (
 --
 
 INSERT INTO `post` (`id_post`, `id_usuario`, `nombre_post`, `descripcion_post`, `tema_categoria`, `cont_likes_post`, `id_resenias`, `enlace_post`, `ubicacion_foto_post`) VALUES
-(5, 2, 'La comida Italiana', 'Entre los platos mÃ¡s famosos de la pasta, estÃ¡ la lasagna, los raviolis, el espagueti, los tallarines preparados con mariscos, carne y verduras, sazonados con salsas como la boloÃ±esa, carbonara, napolitana y puttanesca.', '5', 3, '1', 'https://www.aviatur.com/blog/gastronomia/tour-gastronomico-por-roma#:~:text=Entre%20los%20platos%20m%C3%A1s%20famosos,%2C%20carbonara%2C%20napolitana%20y%20puttanesca.', '../imgs_posts/imgPost_5.jpeg'),
-(6, 2, 'La comida EspaÃ±ola', 'La gastronomÃ­a o cocina espaÃ±ola son los platos, ingredientes, tÃ©cnicas y toda la tradiciÃ³n culinaria que se practica en EspaÃ±a. Cocina de origen que oscila entre el estilo rural y el costero, representa una diversidad fruto de muchas culturas, asÃ­ c', '5', 4, '2', 'https://es.wikipedia.org/wiki/Gastronom%C3%ADa_de_Espa%C3%B1a', '../imgs_posts/imgPost_6.jpeg');
+(5, 2, 'La comida Italiana', 'Entre los platos mÃ¡s famosos de la pasta, estÃ¡ la lasagna, los raviolis, el espagueti, los tallarines preparados con mariscos, carne y verduras, sazonados con salsas como la boloÃ±esa, carbonara, napolitana y puttanesca.', '5', 3, '1,3', 'https://www.aviatur.com/blog/gastronomia/tour-gastronomico-por-roma#:~:text=Entre%20los%20platos%20m%C3%A1s%20famosos,%2C%20carbonara%2C%20napolitana%20y%20puttanesca.', '../imgs_posts/imgPost_5.jpeg'),
+(6, 2, 'La comida EspaÃ±ola', 'La gastronomÃ­a o cocina espaÃ±ola son los platos, ingredientes, tÃ©cnicas y toda la tradiciÃ³n culinaria que se practica en EspaÃ±a. Cocina de origen que oscila entre el estilo rural y el costero, representa una diversidad fruto de muchas culturas, asÃ­ c', '5', 4, '2', 'https://es.wikipedia.org/wiki/Gastronom%C3%ADa_de_Espa%C3%B1a', '../imgs_posts/imgPost_6.jpeg'),
+(7, 3, 'los libros de matematicas son ', 'jejejejjejej I love math', '1', 0, NULL, 'www.google.co', '../imgs_posts/imgPost_7.jpeg'),
+(8, 3, 'fisica cuantica... el mañana ', 'fisica cuantica...lo mejor', '1', 0, NULL, 'www.google.co', '../imgs_posts/imgPost_8.jpeg'),
+(9, 3, 'arte modernista el nuevo picas', 'se llego el nuevo arte', '2', 0, NULL, 'www.google.co', '../imgs_posts/imgPost_9.jpeg'),
+(10, 3, 'soporte whatsapp', 'el mejor soporte para cuentas de whatsapp', '2', 0, NULL, 'www.google.co', '../imgs_posts/imgPost_10.jpeg');
 
 -- --------------------------------------------------------
 
@@ -106,7 +110,8 @@ CREATE TABLE `resenias` (
 
 INSERT INTO `resenias` (`id_resenia`, `id_usuario`, `resenia`, `id_post`) VALUES
 (1, 2, 'Rica!', 5),
-(2, 2, 'Muy buena!', 6);
+(2, 2, 'Muy buena!', 6),
+(3, 3, 'q ricooo!!!', 5);
 
 -- --------------------------------------------------------
 
@@ -242,7 +247,7 @@ ALTER TABLE `venta`
 -- AUTO_INCREMENT de la tabla `post`
 --
 ALTER TABLE `post`
-  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `reg_pedidos`
@@ -260,7 +265,7 @@ ALTER TABLE `reporte`
 -- AUTO_INCREMENT de la tabla `resenias`
 --
 ALTER TABLE `resenias`
-  MODIFY `id_resenia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_resenia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `temas`
