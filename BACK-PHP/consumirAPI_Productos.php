@@ -28,6 +28,12 @@ include '../BACK-PHP/ApiRest.php';
             }
             echo json_encode($resultado);
             exit();
+        }elseif(isset($_POST['cantidad_de_productos'])){
+            $query=" INSERT INTO  reg_pedidos (id_venta,comprador_id_usuario,cantidad_pedido,lugar_envio_pedido,fecha_pedido,valor_Total) VALUES ('".$_POST["id_venta"]."','".$_POST["usuario"]."','".$_POST["cantidad_de_productos"]."','".$_POST["lugar_envio_pedido"]."','".$_POST["fecha"]."','".$_POST["precio"]."')";
+                $id="SELECT MAX(id_pedido) AS id_pedido FROM reg_pedidos WHERE comprador_id_usuario='".$_POST["usuario"]."'";
+                $resultado=methodPOST($query, $id)->fetch(PDO::FETCH_ASSOC);
+                echo json_encode($resultado);
+                exit();
         }
     }
     if ($_SERVER['REQUEST_METHOD']=='GET') {
@@ -35,6 +41,13 @@ include '../BACK-PHP/ApiRest.php';
             header("HTTP/1.1 200 OK");
             $query="SELECT * FROM  venta";
             $resultado=methodGET($query);
+            echo json_encode($resultado->fetchAll());
+            exit();
+        }elseif(isset($_GET['pedidosAll'])){
+            header("HTTP/1.1 200 OK");
+            $query="SELECT * FROM venta INNER JOIN reg_pedidos ON venta.id_venta=reg_pedidos.id_venta WHERE reg_pedidos.comprador_id_usuario='".$_GET["pedidosAll"]."'" ;
+            $resultado=methodGET($query);
+            $pedidos=array();
             echo json_encode($resultado->fetchAll());
             exit();
         }

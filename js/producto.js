@@ -136,7 +136,7 @@ function comprarProducto(id) {
   var usuario = verusuario();
   var idventa =id;
   var f = new Date();
-  var fecha= f.getFullYear()+ "/"+ (f.getMonth() +1) + "/" +f.getDate()  ;
+  var fecha= f.getFullYear()+ "-"+ (f.getMonth() +1) + "-" +f.getDate()  ;
   alert('titulo venta: '+titulo_venta.value+
   '\n id usuario: '+usuario+
   '\n id venta: '+id+
@@ -152,16 +152,17 @@ function comprarProducto(id) {
     "precio": parseFloat(precio.value)*parseFloat(opcionSeleccionada.value)
   }
 
-  /*//este ayax seria para enviar el pedido a la base de datos, para registrar el pedido en la BD
+  //este ayax seria para enviar el pedido a la base de datos, para registrar el pedido en la BD
   $.ajax({
     data: parametros,
-    url: '../BACK-PHP/consumirAPI_Foro.php',
+    url: '../BACK-PHP/consumirAPI_Productos.php',
     method: 'POST',
     responseType: 'json',
   }).then(function (data) {
+    console.log(data);
     var datos = JSON.parse(data);
   });
-  */
+  
 
 }
 

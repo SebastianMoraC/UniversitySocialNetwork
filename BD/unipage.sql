@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-05-2021 a las 18:01:50
+-- Tiempo de generación: 26-05-2021 a las 02:42:22
 -- Versión del servidor: 10.4.18-MariaDB
 -- Versión de PHP: 8.0.3
 
@@ -66,8 +66,19 @@ CREATE TABLE `reg_pedidos` (
   `id_venta` int(11) NOT NULL,
   `comprador_id_usuario` varchar(1) NOT NULL,
   `cantidad_pedido` varchar(3) NOT NULL,
-  `fecha_pedido` date NOT NULL
+  `lugar_envio_pedido` varchar(200) NOT NULL,
+  `fecha_pedido` date NOT NULL,
+  `valor_Total` varchar(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `reg_pedidos`
+--
+
+INSERT INTO `reg_pedidos` (`id_pedido`, `id_venta`, `comprador_id_usuario`, `cantidad_pedido`, `lugar_envio_pedido`, `fecha_pedido`, `valor_Total`) VALUES
+(1, 2, '2', '4', '', '2021-05-25', '400000'),
+(2, 1, '2', '2', 'UTP 2', '2021-05-25', '10000'),
+(3, 2, '2', '3', 'UTP 2', '2021-05-25', '300000');
 
 -- --------------------------------------------------------
 
@@ -235,7 +246,7 @@ ALTER TABLE `post`
 -- AUTO_INCREMENT de la tabla `reg_pedidos`
 --
 ALTER TABLE `reg_pedidos`
-  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `resenias`
