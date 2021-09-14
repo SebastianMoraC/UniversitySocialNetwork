@@ -1,4 +1,4 @@
 # UniversitySocialNetwork
 
 
-Red social diseñada para estudiantes universitarios, con recomendaciones por medio de IA.
+Social network designed for university students, with recommendations through AI.
